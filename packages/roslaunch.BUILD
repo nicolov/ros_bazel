@@ -1,7 +1,7 @@
 package(default_visibility = ["//visibility:public"])
 
 load("@com_github_nicolov_ros_bazel//:tools/ros_interop.bzl",
-     "add_extension")
+     "add_py_extension")
 
 py_library(
     name = 'pylib',
@@ -16,10 +16,8 @@ py_library(
     ],
 )
 
-add_extension(
-    name = 'roslaunch_py',
+add_py_extension(
     src = 'scripts/roslaunch',
-    dest = 'scripts/roslaunch.py',
 )
 
 py_binary(
