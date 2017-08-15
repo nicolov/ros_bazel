@@ -37,3 +37,9 @@ cc_binary(
         '@boost//:program_options',
     ],
 )
+
+py_library(
+    name = 'pylib',
+    srcs = glob(['src/**/*.py']),
+    imports = ['src'],
+)

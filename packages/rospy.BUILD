@@ -9,5 +9,6 @@ py_library(
         '@rosgraph_msgs_repo//:msgs_py',
         '@rosgraph_repo//:pylib',
         '@roslib_repo//:pylib',
+        '@std_msgs_repo//:msgs_py',
     ],
 )

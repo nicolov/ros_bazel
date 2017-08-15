@@ -77,3 +77,29 @@ def export_exe(exes):
             exe = exe,
             out = 'bin/%s' % exe_name,
         )
+
+#
+#
+
+def _add_extension_impl(ctx):
+    # Copy file to a new path, adding an extension. Useful for ros
+    # scripts that can't be used as python binaries because they
+    # lack the .py extension.
+
+    input_file = list(ctx.attr.src.files)[0]
+
+    ctx.action(
+        inputs = [input_file],
+        outputs = [ctx.outputs.dest],
+        command = 'ln -sf `readlink -f %s` %s' % (
+            input_file.path,
+            ctx.outputs.dest.path,
+        ),
+    )
+
+add_extension = rule(
+    implementation = _add_extension_impl,
+    attrs = {
+        'src': attr.label(mandatory=True, allow_files=True, single_file=True),
+        'dest': attr.output(mandatory=True),
+    })
