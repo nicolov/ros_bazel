@@ -29,7 +29,8 @@ _write_package_xml = rule(
     attrs = {
         'ros_package_name': attr.string(mandatory=True),
         'out': attr.output(mandatory=True),
-    })
+    },
+)
 
 def catkin_package(ros_package_name):
     """ Generate a package.xml in the bazel out folder, so that the
@@ -40,3 +41,39 @@ def catkin_package(ros_package_name):
         out = 'package.xml',
         name = 'package_xml',
     )
+
+#
+#
+
+def _export_exe_impl(ctx):
+    # Symlink an executable to a well-known folder that can be added to
+    # the PATH.
+    # https://groups.google.com/forum/#!topic/bazel-discuss/Gq4WoDTHZn4
+
+    input_file = list(ctx.attr.exe.files)[-1]
+
+    ctx.action(
+        inputs=[input_file],
+        outputs=[ctx.outputs.out],
+        command='ln -sf `readlink -f %s` %s' % (
+            input_file.path,
+            ctx.outputs.out.path,),
+    )
+
+_export_exe = rule(
+    implementation = _export_exe_impl,
+    attrs = {
+        'exe': attr.label(mandatory=True, allow_files=True),
+        'out': attr.output(mandatory=True),
+    },
+)
+
+def export_exe(exes):
+    for exe in exes:
+        exe_name = exe.split(':')[-1]
+
+        _export_exe(
+            name = 'export_' + exe_name,
+            exe = exe,
+            out = 'bin/%s' % exe_name,
+        )
