@@ -8,18 +8,17 @@ py_library(
     srcs = glob(['src/**/*.py']),
     imports = ['src'],
     deps = [
-        '@genpy_repo//:pylib',
-        '@rosbag_repo//:pylib',
-        '@rospy_repo//:pylib',
+        '@rosgraph_repo//:pylib',
+        '@rostopic_repo//:pylib',
     ],
 )
 
-add_py_extension(src = 'scripts/rostopic')
+add_py_extension(src = 'scripts/rosnode')
 
 py_binary(
-    name = 'rostopic',
+    name = 'rosnode',
     srcs = [
-        'scripts/rostopic.py',
+        'scripts/rosnode.py',
     ],
     deps = [
         ':pylib',
