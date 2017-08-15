@@ -2,6 +2,10 @@
 Interop with ROS-based tooling.
 """
 
+load("@com_github_nicolov_ros_bazel//:tools/path_utils.bzl",
+    "basename",
+)
+
 PACKAGE_XML_TEMPLATE = """
 <package format="2">
   <name>{pkg_name}</name>
@@ -103,3 +107,35 @@ add_extension = rule(
         'src': attr.label(mandatory=True, allow_files=True, single_file=True),
         'dest': attr.output(mandatory=True),
     })
+
+#
+#
+
+def _symlink_file_impl(ctx):
+    input_file = list(ctx.attr.src.files)[0]
+
+    ctx.action(
+        inputs = [input_file],
+        outputs = [ctx.outputs.dest],
+        command = 'ln -sf `readlink -f %s` %s' % (
+            input_file.path,
+            ctx.outputs.dest.path,
+        ),
+    )
+
+_symlink_file = rule(
+    implementation = _symlink_file_impl,
+    attrs = {
+        'src': attr.label(mandatory=True, allow_files=True, single_file=True),
+        'dest': attr.output(mandatory=True),
+    })
+
+def symlink_files(srcs):
+    # Symlink files to the build space, for example .launch files
+
+    for src in srcs:
+        _symlink_file(
+            name = 'symlink_' + basename(src),
+            src = src,
+            dest = 'share/' + src,
+        )

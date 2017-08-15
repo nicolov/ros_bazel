@@ -365,6 +365,13 @@ def generate_messages(ros_package_name=None,
         imports=['.'],
         deps=[
             '@genpy_repo//:pylib',
+        ] + [
+            # For python, we also need to depend on generated .pys for
+            # dependencies, so that they can be found at runtime.
+            # Following the convention that 'msgs' are the source files,
+            # and 'msgs_py' the generated python libraries, we can just
+            # mangle the label string.
+            x + '_py' for x in deps
         ],
         visibility=["//visibility:public"],
     )
