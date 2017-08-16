@@ -62,7 +62,13 @@ def ros_deps():
         path = "/usr",
         build_file = "@com_github_nicolov_ros_bazel//:third_party/bz2.BUILD",
     )
-    
+
+    native.new_local_repository(
+        name = "uuid",
+        path = "/usr",
+        build_file = "@com_github_nicolov_ros_bazel//:third_party/uuid.BUILD",
+    )
+
     python_repository(
         name = "python",
         version = "2.7",

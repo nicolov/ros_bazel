@@ -11,23 +11,29 @@ cc_library(
     ],
 )
 
-cc_library(
-    name = 'class_loader_TestPlugins1',
+# .so libraries for testing
+# tests only run when the LD_LIBRARY_PATH points to the runfiles directory.
+# https://groups.google.com/forum/#!topic/bazel-discuss/dhsZnRSXnTo
+cc_binary(
+    name = 'libclass_loader_TestPlugins1.so',
     srcs = [
         'test/plugins1.cpp',
         'test/base.h',
     ],
+    linkshared = 1,
+    linkstatic = 0,
     deps = [
         ':cclib',
     ],
 )
-
-cc_library(
-    name = 'test_plugins2',
+cc_binary(
+    name = 'libclass_loader_TestPlugins2.so',
     srcs = [
-        'test/plugins1.cpp',
-        'test/base.h',  
+        'test/plugins2.cpp',
+        'test/base.h',
     ],
+    linkshared = 1,
+    linkstatic = 0,
     deps = [
         ':cclib',
     ],
@@ -45,6 +51,7 @@ cc_test(
         '@gtest//:main',
     ],
     data = [
-        ':class_loader_TestPlugins1',
+        ':libclass_loader_TestPlugins1.so',
+        ':libclass_loader_TestPlugins2.so',
     ],
 )
