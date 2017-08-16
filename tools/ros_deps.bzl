@@ -29,6 +29,14 @@ def ros_deps():
         build_file = "@com_github_nicolov_ros_bazel//:third_party/eigen.BUILD",
     )
 
+    github_archive(
+        name = "poco",
+        repository = "pocoproject/poco",
+        commit = "poco-1.4.5-release",
+        sha256 = "3f34d125080d31f20d8abb1642366a6d61f8c723de1fd645719e897fff78c174",
+        build_file = "@com_github_nicolov_ros_bazel//:third_party/poco.BUILD",
+    )
+
     # Within this repo, tinyxml is used like:
     # '@com_github_nicolov_ros_bazel//third_party/tinyxml' (see rospack),
     # but we also export here, so that it can directly be used by dependents
