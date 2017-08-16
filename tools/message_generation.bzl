@@ -314,7 +314,12 @@ def generate_messages(ros_package_name=None,
         name='msgs_cpp',
         srcs=cpp_outs,
         visibility=["//visibility:public"],
-        deps=[],
+        deps=[
+            '@roscpp_serialization_repo//:cclib',
+        ] + [
+            # See note for python below
+            x + '_cpp' for x in deps
+        ],
         includes=['']
     )
 

@@ -12,7 +12,7 @@ from IPython import embed
 ROSDISTRO = 'indigo'
 # Packages that will be part of the generated workspace
 ROS_PACKAGES = [
-    'ros_comm',
+    'perception',
     'robot',
 ]
 OUTPUT_PATH = 'tools/ros_packages.bzl'

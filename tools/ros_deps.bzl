@@ -73,3 +73,10 @@ def ros_deps():
         name = "python",
         version = "2.7",
     )
+
+def opencv_archive(local_root_path):
+    native.new_local_repository(
+        name = "opencv",
+        path = local_root_path,
+        build_file = "@com_github_nicolov_ros_bazel//:third_party/opencv.BUILD",
+    )
