@@ -18,6 +18,17 @@ def ros_deps():
         build_file = "@com_github_nicolov_ros_bazel//:third_party/console_bridge.BUILD"
     )
 
+    native.new_http_archive(
+        name = "eigen_archive",
+        urls = [
+            "http://mirror.bazel.build/bitbucket.org/eigen/eigen/get/f3a22f35b044.tar.gz",
+            "https://bitbucket.org/eigen/eigen/get/f3a22f35b044.tar.gz",
+        ],
+        sha256 = "ca7beac153d4059c02c8fc59816c82d54ea47fe58365e8aded4082ded0b820c4",
+        strip_prefix = "eigen-eigen-f3a22f35b044",
+        build_file = "@com_github_nicolov_ros_bazel//:third_party/eigen.BUILD",
+    )
+
     # Within this repo, tinyxml is used like:
     # '@com_github_nicolov_ros_bazel//third_party/tinyxml' (see rospack),
     # but we also export here, so that it can directly be used by dependents

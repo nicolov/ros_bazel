@@ -11,7 +11,10 @@ from IPython import embed
 
 ROSDISTRO = 'indigo'
 # Packages that will be part of the generated workspace
-ROS_PACKAGES = ['ros_comm']
+ROS_PACKAGES = [
+    'ros_comm',
+    'robot',
+]
 OUTPUT_PATH = 'tools/ros_packages.bzl'
 BAZEL_WKSPACE_NAME = '@com_github_nicolov_ros_bazel'
 
