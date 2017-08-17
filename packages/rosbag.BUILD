@@ -1,15 +1,18 @@
 package(default_visibility = ["//visibility:public"])
 
+load("@com_github_nicolov_ros_bazel//:tools/ros_interop.bzl",
+     "add_py_extension")
+
 cc_library(
-    name='cclib',
-    srcs=[
+    name = 'cclib',
+    srcs = [
         'src/player.cpp',
         'src/recorder.cpp',
         'src/time_translator.cpp',
     ],
-    hdrs=glob(['include/**/*.h', 'include/**/*.hpp']),
-    strip_include_prefix='include',
-    deps=[
+    hdrs = glob(['include/**/*.h', 'include/**/*.hpp']),
+    strip_include_prefix = 'include',
+    deps = [
         '@rosbag_storage_repo//:cclib',
         '@roscpp_repo//:cclib',
         '@topic_tools_repo//:cclib',
@@ -42,4 +45,19 @@ py_library(
     name = 'pylib',
     srcs = glob(['src/**/*.py']),
     imports = ['src'],
+    deps = [
+        '@rospy_repo//:pylib',
+    ],
+)
+
+add_py_extension(src = 'scripts/rosbag')
+
+py_binary(
+    name = 'rosbag',
+    srcs = [
+        'scripts/rosbag.py',
+    ],
+    deps = [
+        ':pylib',
+    ],
 )
