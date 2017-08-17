@@ -5,6 +5,9 @@ Interop with ROS-based tooling.
 load("@com_github_nicolov_ros_bazel//:tools/path_utils.bzl",
     "basename",
 )
+load("@com_github_nicolov_ros_bazel//:tools/ros_global_tools.bzl",
+    "ROS_GLOBAL_TOOLS",
+)
 
 PACKAGE_XML_TEMPLATE = """
 <package format="2">
@@ -24,7 +27,7 @@ def _write_package_xml_impl(ctx):
     ctx.file_action(
         output=ctx.outputs.out,
         content=PACKAGE_XML_TEMPLATE.format(
-            pkg_name=ctx.attr.ros_package_name)
+            pkg_name=ctx.attr.ros_package_name),
     )
 
 
@@ -45,42 +48,6 @@ def catkin_package(ros_package_name):
         out = 'package.xml',
         name = 'package_xml',
     )
-
-#
-#
-
-def _export_exe_impl(ctx):
-    # Symlink an executable to a well-known folder that can be added to
-    # the PATH.
-    # https://groups.google.com/forum/#!topic/bazel-discuss/Gq4WoDTHZn4
-
-    input_file = list(ctx.attr.exe.files)[-1]
-
-    ctx.action(
-        inputs=[input_file],
-        outputs=[ctx.outputs.out],
-        command='ln -sf `readlink -f %s` %s' % (
-            input_file.path,
-            ctx.outputs.out.path,),
-    )
-
-_export_exe = rule(
-    implementation = _export_exe_impl,
-    attrs = {
-        'exe': attr.label(mandatory=True, allow_files=True),
-        'out': attr.output(mandatory=True),
-    },
-)
-
-def export_exe(exes):
-    for exe in exes:
-        exe_name = exe.split(':')[-1]
-
-        _export_exe(
-            name = 'export_' + exe_name,
-            exe = exe,
-            out = 'bin/%s' % exe_name,
-        )
 
 #
 #
@@ -131,4 +98,50 @@ def add_py_extension(src):
     add_extension(
         src = src,
         ext = '.py',
+    )
+
+#
+#
+
+SETUP_BASH_TPL = """\
+#!/usr/bin/bash
+
+"""
+
+def _generate_setup_bash_impl(ctx):
+    paths = depset()
+    for str_label in ROS_GLOBAL_TOOLS:
+        label = Label(str_label)
+
+        paths += [label.workspace_root]
+
+    path_lines = [
+        'export PATH="bazel-bin/{}:$PATH"'.format(p)
+        for p in paths
+    ]
+
+    # Write
+    ctx.file_action(
+        output = ctx.outputs.out,
+        content = SETUP_BASH_TPL + '\n'.join(path_lines) + '\n',
+        executable = True,
+    )
+
+_generate_setup_bash = rule(
+    implementation = _generate_setup_bash_impl,
+    attrs = {
+        'out': attr.output(mandatory=True),
+    },
+)
+
+def generate_setup_bash():
+    # Expose tools in the root BUILD so that they're built with //...
+    for ros_tool_label in ROS_GLOBAL_TOOLS:
+        native.alias(
+            name = ros_tool_label.split(':')[-1],
+            actual = ros_tool_label)
+
+    _generate_setup_bash(
+        name = 'setup_bash',
+        out = 'setup.bash',
     )
