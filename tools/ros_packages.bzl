@@ -791,7 +791,7 @@ def ros_packages():
     )
 
     native.new_http_archive(
-        name = "rospy_repo",
+        name = "rospy",
         build_file = "@com_github_nicolov_ros_bazel//:packages/rospy.BUILD",
         url = "https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/rospy/1.11.21-0.tar.gz",
         strip_prefix = "ros_comm-release-release-indigo-rospy-1.11.21-0",
