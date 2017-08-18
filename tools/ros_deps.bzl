@@ -37,6 +37,14 @@ def ros_deps():
         build_file = "@com_github_nicolov_ros_bazel//:third_party/poco.BUILD",
     )
 
+    github_archive(
+        name = "yaml_cpp",
+        repository = "jbeder/yaml-cpp",
+        commit = "yaml-cpp-0.5.3",
+        sha256 = "668d7df0a43daba06e5b36aaa460ac902713ca4feb6b2d2697661607a0bc66ee",
+        build_file = "@com_github_nicolov_ros_bazel//:third_party/yaml_cpp.BUILD",
+    )
+
     # Within this repo, tinyxml is used like:
     # '@com_github_nicolov_ros_bazel//third_party/tinyxml' (see rospack),
     # but we also export here, so that it can directly be used by dependents
