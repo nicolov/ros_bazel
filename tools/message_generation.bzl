@@ -130,7 +130,7 @@ _gencpp = rule(
         'msg_idx': attr.int(),
         'ros_package_name': attr.string(mandatory=True),
         '_gen_script': attr.label(
-            default=Label('@gencpp_repo//:gencpp_exe'),
+            default=Label('@gencpp//:gencpp_exe'),
             executable=True,
             cfg='host'),
         'outs': attr.output_list(),
@@ -165,11 +165,11 @@ def _py_outs_for_files(srcs, ros_package_name, gen_type):
 
     outs = [
         # One .py file for each source file
-        join_paths(ros_package_name, gen_type, gen_filename)
+        join_paths('src', ros_package_name, gen_type, gen_filename)
         for gen_filename in gen_filenames
     ] + [
         # __init__ for the msg/srv package
-        join_paths(ros_package_name, gen_type, '__init__.py')
+        join_paths('src', ros_package_name, gen_type, '__init__.py')
     ]
 
     return outs
@@ -231,7 +231,7 @@ _genpy_msgs = rule(
             cfg='host'),
         # Script to generate the __init__.py (same for both msg and srv)
         'gen_module_script': attr.label(
-            default=Label('@genpy_repo//:genmsg_py_exe'),
+            default=Label('@genpy//:genmsg_py_exe'),
             executable=True,
             cfg='host',
         ),
@@ -315,7 +315,7 @@ def generate_messages(ros_package_name=None,
         srcs=cpp_outs,
         visibility=["//visibility:public"],
         deps=[
-            '@roscpp_serialization_repo//:cclib',
+            '@roscpp_serialization//:cclib',
         ] + [
             # See note for python below
             x + '_cpp' for x in deps
@@ -336,7 +336,7 @@ def generate_messages(ros_package_name=None,
             msgs = ':msgs',
             ros_package_name = ros_package_name,
             outs = py_msg_outs,
-            gen_script = Label('@genpy_repo//:genmsg_py_exe'),
+            gen_script = Label('@genpy//:genmsg_py_exe'),
         )
     else:
         py_msg_outs = []
@@ -351,7 +351,7 @@ def generate_messages(ros_package_name=None,
             msgs = ':msgs',
             ros_package_name = ros_package_name,
             outs = py_srv_outs,
-            gen_script = Label('@genpy_repo//:gensrv_py_exe'),
+            gen_script = Label('@genpy//:gensrv_py_exe'),
         )
     else:
         py_srv_outs = []
@@ -366,10 +366,10 @@ def generate_messages(ros_package_name=None,
 
     native.py_library(
         name='msgs_py',
-        srcs=py_msg_outs + py_srv_outs + [py_toplevel_init],
+        srcs=py_msg_outs + py_srv_outs + [py_toplevel_init, '__init__.py'],
         imports=['.'],
         deps=[
-            '@genpy_repo//:pylib',
+            '@genpy//:pylib',
         ] + [
             # For python, we also need to depend on generated .pys for
             # dependencies, so that they can be found at runtime.

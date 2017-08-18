@@ -7,8 +7,6 @@ Generate bazel code from a rosinstall_generator output.
 import subprocess
 import yaml
 
-from IPython import embed
-
 ROSDISTRO = 'indigo'
 # Packages that will be part of the generated workspace
 ROS_PACKAGES = [
@@ -21,7 +19,7 @@ BAZEL_WKSPACE_NAME = '@com_github_nicolov_ros_bazel'
 def render_new_http_archive(pkg):
     BAZEL_ARCHIVE_TPL = """
     native.new_http_archive(
-        name = "{pkg_name}_repo",
+        name = "{pkg_name}",
         build_file = "{bazel_wkspace_name}//:packages/{pkg_name}.BUILD",
         url = "{pkg_url}",
         strip_prefix = "{pkg_version}",

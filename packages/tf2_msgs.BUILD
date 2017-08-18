@@ -6,7 +6,7 @@ load("@com_github_nicolov_ros_bazel//:tools/message_generation.bzl",
 generate_messages(
     ros_package_name='tf2_msgs',
     deps = [
-        '@actionlib_msgs_repo//:msgs',
-        '@geometry_msgs_repo//:msgs',
+        '@actionlib_msgs//:msgs',
+        '@geometry_msgs//:msgs',
     ],
 )

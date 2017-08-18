@@ -1,5 +1,9 @@
 package(default_visibility = ["//visibility:public"])
 
+load("@com_github_nicolov_ros_bazel//:tools/ros_interop.bzl",
+     "catkin_python_library",
+)
+
 cc_library(
     name='cclib',
     srcs=[
@@ -9,7 +13,7 @@ cc_library(
     strip_include_prefix='include',
     deps=[
         '@boost//:thread',
-        '@rospack_repo//:cclib',
+        '@rospack//:cclib',
     ],
 )
 
@@ -31,11 +35,11 @@ cc_test(
     ],
 )
 
-py_library(
+catkin_python_library(
     name = 'pylib',
-    srcs = glob(['src/**/*.py']),
-    imports = ['src'],
+    py_module_name = 'roslib',
     deps = [
-        '@catkin_repo//:pylib',
+        '@catkin//:pylib',
     ],
 )
+

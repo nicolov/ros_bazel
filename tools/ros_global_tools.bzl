@@ -4,11 +4,11 @@ Binaries that should be exported from ROS external workspaces
 """
 
 ROS_GLOBAL_TOOLS = [
-    '@rosbag_repo//:rosbag',
-    '@rosbash_repo//:rosrun',
-    '@roslaunch_repo//:roslaunch',
-    '@rospack_repo//:rospack',
-    '@rosservice_repo//:rosservice',
-    '@rostopic_repo//:rostopic',
-    '@rosmaster_repo//:rosmaster',
+    '@rosbag//:rosbag',
+    '@rosbash//:rosrun',
+    '@roslaunch//:roslaunch',
+    '@rospack//:rospack',
+    '@rosservice//:rosservice',
+    '@rostopic//:rostopic',
+    '@rosmaster//:rosmaster',
 ]

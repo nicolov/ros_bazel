@@ -1,790 +1,790 @@
 def ros_packages():
     native.new_http_archive(
-        name = "actionlib_repo",
+        name = "actionlib",
         build_file = "@com_github_nicolov_ros_bazel//:packages/actionlib.BUILD",
         url = "https://github.com/ros-gbp/actionlib-release/archive/release/indigo/actionlib/1.11.9-0.tar.gz",
         strip_prefix = "actionlib-release-release-indigo-actionlib-1.11.9-0",
     )
 
     native.new_http_archive(
-        name = "actionlib_msgs_repo",
+        name = "actionlib_msgs",
         build_file = "@com_github_nicolov_ros_bazel//:packages/actionlib_msgs.BUILD",
         url = "https://github.com/ros-gbp/common_msgs-release/archive/release/indigo/actionlib_msgs/1.11.9-0.tar.gz",
         strip_prefix = "common_msgs-release-release-indigo-actionlib_msgs-1.11.9-0",
     )
 
     native.new_http_archive(
-        name = "angles_repo",
+        name = "angles",
         build_file = "@com_github_nicolov_ros_bazel//:packages/angles.BUILD",
         url = "https://github.com/ros-gbp/geometry_angles_utils-release/archive/release/indigo/angles/1.9.11-0.tar.gz",
         strip_prefix = "geometry_angles_utils-release-release-indigo-angles-1.9.11-0",
     )
 
     native.new_http_archive(
-        name = "bond_repo",
+        name = "bond",
         build_file = "@com_github_nicolov_ros_bazel//:packages/bond.BUILD",
         url = "https://github.com/ros-gbp/bond_core-release/archive/release/indigo/bond/1.7.19-0.tar.gz",
         strip_prefix = "bond_core-release-release-indigo-bond-1.7.19-0",
     )
 
     native.new_http_archive(
-        name = "bond_core_repo",
+        name = "bond_core",
         build_file = "@com_github_nicolov_ros_bazel//:packages/bond_core.BUILD",
         url = "https://github.com/ros-gbp/bond_core-release/archive/release/indigo/bond_core/1.7.19-0.tar.gz",
         strip_prefix = "bond_core-release-release-indigo-bond_core-1.7.19-0",
     )
 
     native.new_http_archive(
-        name = "bondcpp_repo",
+        name = "bondcpp",
         build_file = "@com_github_nicolov_ros_bazel//:packages/bondcpp.BUILD",
         url = "https://github.com/ros-gbp/bond_core-release/archive/release/indigo/bondcpp/1.7.19-0.tar.gz",
         strip_prefix = "bond_core-release-release-indigo-bondcpp-1.7.19-0",
     )
 
     native.new_http_archive(
-        name = "bondpy_repo",
+        name = "bondpy",
         build_file = "@com_github_nicolov_ros_bazel//:packages/bondpy.BUILD",
         url = "https://github.com/ros-gbp/bond_core-release/archive/release/indigo/bondpy/1.7.19-0.tar.gz",
         strip_prefix = "bond_core-release-release-indigo-bondpy-1.7.19-0",
     )
 
     native.new_http_archive(
-        name = "camera_calibration_repo",
+        name = "camera_calibration",
         build_file = "@com_github_nicolov_ros_bazel//:packages/camera_calibration.BUILD",
         url = "https://github.com/ros-gbp/image_pipeline-release/archive/release/indigo/camera_calibration/1.12.20-0.tar.gz",
         strip_prefix = "image_pipeline-release-release-indigo-camera_calibration-1.12.20-0",
     )
 
     native.new_http_archive(
-        name = "camera_calibration_parsers_repo",
+        name = "camera_calibration_parsers",
         build_file = "@com_github_nicolov_ros_bazel//:packages/camera_calibration_parsers.BUILD",
         url = "https://github.com/ros-gbp/image_common-release/archive/release/indigo/camera_calibration_parsers/1.11.12-0.tar.gz",
         strip_prefix = "image_common-release-release-indigo-camera_calibration_parsers-1.11.12-0",
     )
 
     native.new_http_archive(
-        name = "camera_info_manager_repo",
+        name = "camera_info_manager",
         build_file = "@com_github_nicolov_ros_bazel//:packages/camera_info_manager.BUILD",
         url = "https://github.com/ros-gbp/image_common-release/archive/release/indigo/camera_info_manager/1.11.12-0.tar.gz",
         strip_prefix = "image_common-release-release-indigo-camera_info_manager-1.11.12-0",
     )
 
     native.new_http_archive(
-        name = "catkin_repo",
+        name = "catkin",
         build_file = "@com_github_nicolov_ros_bazel//:packages/catkin.BUILD",
         url = "https://github.com/ros-gbp/catkin-release/archive/release/indigo/catkin/0.6.19-0.tar.gz",
         strip_prefix = "catkin-release-release-indigo-catkin-0.6.19-0",
     )
 
     native.new_http_archive(
-        name = "class_loader_repo",
+        name = "class_loader",
         build_file = "@com_github_nicolov_ros_bazel//:packages/class_loader.BUILD",
         url = "https://github.com/ros-gbp/class_loader-release/archive/release/indigo/class_loader/0.3.6-0.tar.gz",
         strip_prefix = "class_loader-release-release-indigo-class_loader-0.3.6-0",
     )
 
     native.new_http_archive(
-        name = "cmake_modules_repo",
+        name = "cmake_modules",
         build_file = "@com_github_nicolov_ros_bazel//:packages/cmake_modules.BUILD",
         url = "https://github.com/ros-gbp/cmake_modules-release/archive/release/indigo/cmake_modules/0.3.3-0.tar.gz",
         strip_prefix = "cmake_modules-release-release-indigo-cmake_modules-0.3.3-0",
     )
 
     native.new_http_archive(
-        name = "collada_parser_repo",
+        name = "collada_parser",
         build_file = "@com_github_nicolov_ros_bazel//:packages/collada_parser.BUILD",
         url = "https://github.com/ros-gbp/collada_urdf-release/archive/release/indigo/collada_parser/1.11.14-0.tar.gz",
         strip_prefix = "collada_urdf-release-release-indigo-collada_parser-1.11.14-0",
     )
 
     native.new_http_archive(
-        name = "collada_urdf_repo",
+        name = "collada_urdf",
         build_file = "@com_github_nicolov_ros_bazel//:packages/collada_urdf.BUILD",
         url = "https://github.com/ros-gbp/collada_urdf-release/archive/release/indigo/collada_urdf/1.11.14-0.tar.gz",
         strip_prefix = "collada_urdf-release-release-indigo-collada_urdf-1.11.14-0",
     )
 
     native.new_http_archive(
-        name = "common_msgs_repo",
+        name = "common_msgs",
         build_file = "@com_github_nicolov_ros_bazel//:packages/common_msgs.BUILD",
         url = "https://github.com/ros-gbp/common_msgs-release/archive/release/indigo/common_msgs/1.11.9-0.tar.gz",
         strip_prefix = "common_msgs-release-release-indigo-common_msgs-1.11.9-0",
     )
 
     native.new_http_archive(
-        name = "compressed_depth_image_transport_repo",
+        name = "compressed_depth_image_transport",
         build_file = "@com_github_nicolov_ros_bazel//:packages/compressed_depth_image_transport.BUILD",
         url = "https://github.com/ros-gbp/image_transport_plugins-release/archive/release/indigo/compressed_depth_image_transport/1.9.5-0.tar.gz",
         strip_prefix = "image_transport_plugins-release-release-indigo-compressed_depth_image_transport-1.9.5-0",
     )
 
     native.new_http_archive(
-        name = "compressed_image_transport_repo",
+        name = "compressed_image_transport",
         build_file = "@com_github_nicolov_ros_bazel//:packages/compressed_image_transport.BUILD",
         url = "https://github.com/ros-gbp/image_transport_plugins-release/archive/release/indigo/compressed_image_transport/1.9.5-0.tar.gz",
         strip_prefix = "image_transport_plugins-release-release-indigo-compressed_image_transport-1.9.5-0",
     )
 
     native.new_http_archive(
-        name = "control_msgs_repo",
+        name = "control_msgs",
         build_file = "@com_github_nicolov_ros_bazel//:packages/control_msgs.BUILD",
         url = "https://github.com/ros-gbp/control_msgs-release/archive/release/indigo/control_msgs/1.3.1-0.tar.gz",
         strip_prefix = "control_msgs-release-release-indigo-control_msgs-1.3.1-0",
     )
 
     native.new_http_archive(
-        name = "cpp_common_repo",
+        name = "cpp_common",
         build_file = "@com_github_nicolov_ros_bazel//:packages/cpp_common.BUILD",
         url = "https://github.com/ros-gbp/roscpp_core-release/archive/release/indigo/cpp_common/0.5.8-0.tar.gz",
         strip_prefix = "roscpp_core-release-release-indigo-cpp_common-0.5.8-0",
     )
 
     native.new_http_archive(
-        name = "cv_bridge_repo",
+        name = "cv_bridge",
         build_file = "@com_github_nicolov_ros_bazel//:packages/cv_bridge.BUILD",
         url = "https://github.com/ros-gbp/vision_opencv-release/archive/release/indigo/cv_bridge/1.11.15-0.tar.gz",
         strip_prefix = "vision_opencv-release-release-indigo-cv_bridge-1.11.15-0",
     )
 
     native.new_http_archive(
-        name = "depth_image_proc_repo",
+        name = "depth_image_proc",
         build_file = "@com_github_nicolov_ros_bazel//:packages/depth_image_proc.BUILD",
         url = "https://github.com/ros-gbp/image_pipeline-release/archive/release/indigo/depth_image_proc/1.12.20-0.tar.gz",
         strip_prefix = "image_pipeline-release-release-indigo-depth_image_proc-1.12.20-0",
     )
 
     native.new_http_archive(
-        name = "diagnostic_aggregator_repo",
+        name = "diagnostic_aggregator",
         build_file = "@com_github_nicolov_ros_bazel//:packages/diagnostic_aggregator.BUILD",
         url = "https://github.com/ros-gbp/diagnostics-release/archive/release/indigo/diagnostic_aggregator/1.9.2-0.tar.gz",
         strip_prefix = "diagnostics-release-release-indigo-diagnostic_aggregator-1.9.2-0",
     )
 
     native.new_http_archive(
-        name = "diagnostic_analysis_repo",
+        name = "diagnostic_analysis",
         build_file = "@com_github_nicolov_ros_bazel//:packages/diagnostic_analysis.BUILD",
         url = "https://github.com/ros-gbp/diagnostics-release/archive/release/indigo/diagnostic_analysis/1.9.2-0.tar.gz",
         strip_prefix = "diagnostics-release-release-indigo-diagnostic_analysis-1.9.2-0",
     )
 
     native.new_http_archive(
-        name = "diagnostic_common_diagnostics_repo",
+        name = "diagnostic_common_diagnostics",
         build_file = "@com_github_nicolov_ros_bazel//:packages/diagnostic_common_diagnostics.BUILD",
         url = "https://github.com/ros-gbp/diagnostics-release/archive/release/indigo/diagnostic_common_diagnostics/1.9.2-0.tar.gz",
         strip_prefix = "diagnostics-release-release-indigo-diagnostic_common_diagnostics-1.9.2-0",
     )
 
     native.new_http_archive(
-        name = "diagnostic_msgs_repo",
+        name = "diagnostic_msgs",
         build_file = "@com_github_nicolov_ros_bazel//:packages/diagnostic_msgs.BUILD",
         url = "https://github.com/ros-gbp/common_msgs-release/archive/release/indigo/diagnostic_msgs/1.11.9-0.tar.gz",
         strip_prefix = "common_msgs-release-release-indigo-diagnostic_msgs-1.11.9-0",
     )
 
     native.new_http_archive(
-        name = "diagnostic_updater_repo",
+        name = "diagnostic_updater",
         build_file = "@com_github_nicolov_ros_bazel//:packages/diagnostic_updater.BUILD",
         url = "https://github.com/ros-gbp/diagnostics-release/archive/release/indigo/diagnostic_updater/1.9.2-0.tar.gz",
         strip_prefix = "diagnostics-release-release-indigo-diagnostic_updater-1.9.2-0",
     )
 
     native.new_http_archive(
-        name = "diagnostics_repo",
+        name = "diagnostics",
         build_file = "@com_github_nicolov_ros_bazel//:packages/diagnostics.BUILD",
         url = "https://github.com/ros-gbp/diagnostics-release/archive/release/indigo/diagnostics/1.9.2-0.tar.gz",
         strip_prefix = "diagnostics-release-release-indigo-diagnostics-1.9.2-0",
     )
 
     native.new_http_archive(
-        name = "dynamic_reconfigure_repo",
+        name = "dynamic_reconfigure",
         build_file = "@com_github_nicolov_ros_bazel//:packages/dynamic_reconfigure.BUILD",
         url = "https://github.com/ros-gbp/dynamic_reconfigure-release/archive/release/indigo/dynamic_reconfigure/1.5.48-0.tar.gz",
         strip_prefix = "dynamic_reconfigure-release-release-indigo-dynamic_reconfigure-1.5.48-0",
     )
 
     native.new_http_archive(
-        name = "eigen_conversions_repo",
+        name = "eigen_conversions",
         build_file = "@com_github_nicolov_ros_bazel//:packages/eigen_conversions.BUILD",
         url = "https://github.com/ros-gbp/geometry-release/archive/release/indigo/eigen_conversions/1.11.9-0.tar.gz",
         strip_prefix = "geometry-release-release-indigo-eigen_conversions-1.11.9-0",
     )
 
     native.new_http_archive(
-        name = "eigen_stl_containers_repo",
+        name = "eigen_stl_containers",
         build_file = "@com_github_nicolov_ros_bazel//:packages/eigen_stl_containers.BUILD",
         url = "https://github.com/ros-gbp/eigen_stl_containers-release/archive/release/indigo/eigen_stl_containers/0.1.8-0.tar.gz",
         strip_prefix = "eigen_stl_containers-release-release-indigo-eigen_stl_containers-0.1.8-0",
     )
 
     native.new_http_archive(
-        name = "executive_smach_repo",
+        name = "executive_smach",
         build_file = "@com_github_nicolov_ros_bazel//:packages/executive_smach.BUILD",
         url = "https://github.com/ros-gbp/executive_smach-release/archive/release/indigo/executive_smach/2.0.1-0.tar.gz",
         strip_prefix = "executive_smach-release-release-indigo-executive_smach-2.0.1-0",
     )
 
     native.new_http_archive(
-        name = "filters_repo",
+        name = "filters",
         build_file = "@com_github_nicolov_ros_bazel//:packages/filters.BUILD",
         url = "https://github.com/ros-gbp/filters-release/archive/release/indigo/filters/1.7.5-0.tar.gz",
         strip_prefix = "filters-release-release-indigo-filters-1.7.5-0",
     )
 
     native.new_http_archive(
-        name = "gencpp_repo",
+        name = "gencpp",
         build_file = "@com_github_nicolov_ros_bazel//:packages/gencpp.BUILD",
         url = "https://github.com/ros-gbp/gencpp-release/archive/release/indigo/gencpp/0.5.5-0.tar.gz",
         strip_prefix = "gencpp-release-release-indigo-gencpp-0.5.5-0",
     )
 
     native.new_http_archive(
-        name = "genlisp_repo",
+        name = "genlisp",
         build_file = "@com_github_nicolov_ros_bazel//:packages/genlisp.BUILD",
         url = "https://github.com/ros-gbp/genlisp-release/archive/release/indigo/genlisp/0.4.15-0.tar.gz",
         strip_prefix = "genlisp-release-release-indigo-genlisp-0.4.15-0",
     )
 
     native.new_http_archive(
-        name = "genmsg_repo",
+        name = "genmsg",
         build_file = "@com_github_nicolov_ros_bazel//:packages/genmsg.BUILD",
         url = "https://github.com/ros-gbp/genmsg-release/archive/release/indigo/genmsg/0.5.8-0.tar.gz",
         strip_prefix = "genmsg-release-release-indigo-genmsg-0.5.8-0",
     )
 
     native.new_http_archive(
-        name = "genpy_repo",
+        name = "genpy",
         build_file = "@com_github_nicolov_ros_bazel//:packages/genpy.BUILD",
         url = "https://github.com/ros-gbp/genpy-release/archive/release/indigo/genpy/0.5.10-0.tar.gz",
         strip_prefix = "genpy-release-release-indigo-genpy-0.5.10-0",
     )
 
     native.new_http_archive(
-        name = "geometric_shapes_repo",
+        name = "geometric_shapes",
         build_file = "@com_github_nicolov_ros_bazel//:packages/geometric_shapes.BUILD",
         url = "https://github.com/ros-gbp/geometric_shapes-release/archive/release/indigo/geometric_shapes/0.4.5-0.tar.gz",
         strip_prefix = "geometric_shapes-release-release-indigo-geometric_shapes-0.4.5-0",
     )
 
     native.new_http_archive(
-        name = "geometry_repo",
+        name = "geometry",
         build_file = "@com_github_nicolov_ros_bazel//:packages/geometry.BUILD",
         url = "https://github.com/ros-gbp/geometry-release/archive/release/indigo/geometry/1.11.9-0.tar.gz",
         strip_prefix = "geometry-release-release-indigo-geometry-1.11.9-0",
     )
 
     native.new_http_archive(
-        name = "geometry_msgs_repo",
+        name = "geometry_msgs",
         build_file = "@com_github_nicolov_ros_bazel//:packages/geometry_msgs.BUILD",
         url = "https://github.com/ros-gbp/common_msgs-release/archive/release/indigo/geometry_msgs/1.11.9-0.tar.gz",
         strip_prefix = "common_msgs-release-release-indigo-geometry_msgs-1.11.9-0",
     )
 
     native.new_http_archive(
-        name = "image_common_repo",
+        name = "image_common",
         build_file = "@com_github_nicolov_ros_bazel//:packages/image_common.BUILD",
         url = "https://github.com/ros-gbp/image_common-release/archive/release/indigo/image_common/1.11.12-0.tar.gz",
         strip_prefix = "image_common-release-release-indigo-image_common-1.11.12-0",
     )
 
     native.new_http_archive(
-        name = "image_geometry_repo",
+        name = "image_geometry",
         build_file = "@com_github_nicolov_ros_bazel//:packages/image_geometry.BUILD",
         url = "https://github.com/ros-gbp/vision_opencv-release/archive/release/indigo/image_geometry/1.11.15-0.tar.gz",
         strip_prefix = "vision_opencv-release-release-indigo-image_geometry-1.11.15-0",
     )
 
     native.new_http_archive(
-        name = "image_pipeline_repo",
+        name = "image_pipeline",
         build_file = "@com_github_nicolov_ros_bazel//:packages/image_pipeline.BUILD",
         url = "https://github.com/ros-gbp/image_pipeline-release/archive/release/indigo/image_pipeline/1.12.20-0.tar.gz",
         strip_prefix = "image_pipeline-release-release-indigo-image_pipeline-1.12.20-0",
     )
 
     native.new_http_archive(
-        name = "image_proc_repo",
+        name = "image_proc",
         build_file = "@com_github_nicolov_ros_bazel//:packages/image_proc.BUILD",
         url = "https://github.com/ros-gbp/image_pipeline-release/archive/release/indigo/image_proc/1.12.20-0.tar.gz",
         strip_prefix = "image_pipeline-release-release-indigo-image_proc-1.12.20-0",
     )
 
     native.new_http_archive(
-        name = "image_publisher_repo",
+        name = "image_publisher",
         build_file = "@com_github_nicolov_ros_bazel//:packages/image_publisher.BUILD",
         url = "https://github.com/ros-gbp/image_pipeline-release/archive/release/indigo/image_publisher/1.12.20-0.tar.gz",
         strip_prefix = "image_pipeline-release-release-indigo-image_publisher-1.12.20-0",
     )
 
     native.new_http_archive(
-        name = "image_rotate_repo",
+        name = "image_rotate",
         build_file = "@com_github_nicolov_ros_bazel//:packages/image_rotate.BUILD",
         url = "https://github.com/ros-gbp/image_pipeline-release/archive/release/indigo/image_rotate/1.12.20-0.tar.gz",
         strip_prefix = "image_pipeline-release-release-indigo-image_rotate-1.12.20-0",
     )
 
     native.new_http_archive(
-        name = "image_transport_repo",
+        name = "image_transport",
         build_file = "@com_github_nicolov_ros_bazel//:packages/image_transport.BUILD",
         url = "https://github.com/ros-gbp/image_common-release/archive/release/indigo/image_transport/1.11.12-0.tar.gz",
         strip_prefix = "image_common-release-release-indigo-image_transport-1.11.12-0",
     )
 
     native.new_http_archive(
-        name = "image_transport_plugins_repo",
+        name = "image_transport_plugins",
         build_file = "@com_github_nicolov_ros_bazel//:packages/image_transport_plugins.BUILD",
         url = "https://github.com/ros-gbp/image_transport_plugins-release/archive/release/indigo/image_transport_plugins/1.9.5-0.tar.gz",
         strip_prefix = "image_transport_plugins-release-release-indigo-image_transport_plugins-1.9.5-0",
     )
 
     native.new_http_archive(
-        name = "image_view_repo",
+        name = "image_view",
         build_file = "@com_github_nicolov_ros_bazel//:packages/image_view.BUILD",
         url = "https://github.com/ros-gbp/image_pipeline-release/archive/release/indigo/image_view/1.12.20-0.tar.gz",
         strip_prefix = "image_pipeline-release-release-indigo-image_view-1.12.20-0",
     )
 
     native.new_http_archive(
-        name = "joint_state_publisher_repo",
+        name = "joint_state_publisher",
         build_file = "@com_github_nicolov_ros_bazel//:packages/joint_state_publisher.BUILD",
         url = "https://github.com/ros-gbp/robot_model-release/archive/release/indigo/joint_state_publisher/1.11.14-0.tar.gz",
         strip_prefix = "robot_model-release-release-indigo-joint_state_publisher-1.11.14-0",
     )
 
     native.new_http_archive(
-        name = "kdl_conversions_repo",
+        name = "kdl_conversions",
         build_file = "@com_github_nicolov_ros_bazel//:packages/kdl_conversions.BUILD",
         url = "https://github.com/ros-gbp/geometry-release/archive/release/indigo/kdl_conversions/1.11.9-0.tar.gz",
         strip_prefix = "geometry-release-release-indigo-kdl_conversions-1.11.9-0",
     )
 
     native.new_http_archive(
-        name = "kdl_parser_repo",
+        name = "kdl_parser",
         build_file = "@com_github_nicolov_ros_bazel//:packages/kdl_parser.BUILD",
         url = "https://github.com/ros-gbp/kdl_parser-release/archive/release/indigo/kdl_parser/1.11.14-0.tar.gz",
         strip_prefix = "kdl_parser-release-release-indigo-kdl_parser-1.11.14-0",
     )
 
     native.new_http_archive(
-        name = "laser_assembler_repo",
+        name = "laser_assembler",
         build_file = "@com_github_nicolov_ros_bazel//:packages/laser_assembler.BUILD",
         url = "https://github.com/ros-gbp/laser_assembler-release/archive/release/indigo/laser_assembler/1.7.3-0.tar.gz",
         strip_prefix = "laser_assembler-release-release-indigo-laser_assembler-1.7.3-0",
     )
 
     native.new_http_archive(
-        name = "laser_filters_repo",
+        name = "laser_filters",
         build_file = "@com_github_nicolov_ros_bazel//:packages/laser_filters.BUILD",
         url = "https://github.com/ros-gbp/laser_filters-release/archive/release/indigo/laser_filters/1.8.3-1.tar.gz",
         strip_prefix = "laser_filters-release-release-indigo-laser_filters-1.8.3-1",
     )
 
     native.new_http_archive(
-        name = "laser_geometry_repo",
+        name = "laser_geometry",
         build_file = "@com_github_nicolov_ros_bazel//:packages/laser_geometry.BUILD",
         url = "https://github.com/ros-gbp/laser_geometry-release/archive/release/indigo/laser_geometry/1.6.4-0.tar.gz",
         strip_prefix = "laser_geometry-release-release-indigo-laser_geometry-1.6.4-0",
     )
 
     native.new_http_archive(
-        name = "laser_pipeline_repo",
+        name = "laser_pipeline",
         build_file = "@com_github_nicolov_ros_bazel//:packages/laser_pipeline.BUILD",
         url = "https://github.com/ros-gbp/laser_pipeline-release/archive/release/indigo/laser_pipeline/1.6.1-0.tar.gz",
         strip_prefix = "laser_pipeline-release-release-indigo-laser_pipeline-1.6.1-0",
     )
 
     native.new_http_archive(
-        name = "message_filters_repo",
+        name = "message_filters",
         build_file = "@com_github_nicolov_ros_bazel//:packages/message_filters.BUILD",
         url = "https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/message_filters/1.11.21-0.tar.gz",
         strip_prefix = "ros_comm-release-release-indigo-message_filters-1.11.21-0",
     )
 
     native.new_http_archive(
-        name = "message_generation_repo",
+        name = "message_generation",
         build_file = "@com_github_nicolov_ros_bazel//:packages/message_generation.BUILD",
         url = "https://github.com/ros-gbp/message_generation-release/archive/release/indigo/message_generation/0.2.10-0.tar.gz",
         strip_prefix = "message_generation-release-release-indigo-message_generation-0.2.10-0",
     )
 
     native.new_http_archive(
-        name = "message_runtime_repo",
+        name = "message_runtime",
         build_file = "@com_github_nicolov_ros_bazel//:packages/message_runtime.BUILD",
         url = "https://github.com/ros-gbp/message_runtime-release/archive/release/indigo/message_runtime/0.4.12-0.tar.gz",
         strip_prefix = "message_runtime-release-release-indigo-message_runtime-0.4.12-0",
     )
 
     native.new_http_archive(
-        name = "mk_repo",
+        name = "mk",
         build_file = "@com_github_nicolov_ros_bazel//:packages/mk.BUILD",
         url = "https://github.com/ros-gbp/ros-release/archive/release/indigo/mk/1.11.14-0.tar.gz",
         strip_prefix = "ros-release-release-indigo-mk-1.11.14-0",
     )
 
     native.new_http_archive(
-        name = "nav_msgs_repo",
+        name = "nav_msgs",
         build_file = "@com_github_nicolov_ros_bazel//:packages/nav_msgs.BUILD",
         url = "https://github.com/ros-gbp/common_msgs-release/archive/release/indigo/nav_msgs/1.11.9-0.tar.gz",
         strip_prefix = "common_msgs-release-release-indigo-nav_msgs-1.11.9-0",
     )
 
     native.new_http_archive(
-        name = "nodelet_repo",
+        name = "nodelet",
         build_file = "@com_github_nicolov_ros_bazel//:packages/nodelet.BUILD",
         url = "https://github.com/ros-gbp/nodelet_core-release/archive/release/indigo/nodelet/1.9.10-0.tar.gz",
         strip_prefix = "nodelet_core-release-release-indigo-nodelet-1.9.10-0",
     )
 
     native.new_http_archive(
-        name = "nodelet_core_repo",
+        name = "nodelet_core",
         build_file = "@com_github_nicolov_ros_bazel//:packages/nodelet_core.BUILD",
         url = "https://github.com/ros-gbp/nodelet_core-release/archive/release/indigo/nodelet_core/1.9.10-0.tar.gz",
         strip_prefix = "nodelet_core-release-release-indigo-nodelet_core-1.9.10-0",
     )
 
     native.new_http_archive(
-        name = "nodelet_topic_tools_repo",
+        name = "nodelet_topic_tools",
         build_file = "@com_github_nicolov_ros_bazel//:packages/nodelet_topic_tools.BUILD",
         url = "https://github.com/ros-gbp/nodelet_core-release/archive/release/indigo/nodelet_topic_tools/1.9.10-0.tar.gz",
         strip_prefix = "nodelet_core-release-release-indigo-nodelet_topic_tools-1.9.10-0",
     )
 
     native.new_http_archive(
-        name = "octomap_repo",
+        name = "octomap",
         build_file = "@com_github_nicolov_ros_bazel//:packages/octomap.BUILD",
         url = "https://github.com/ros-gbp/octomap-release/archive/release/indigo/octomap/1.6.9-0.tar.gz",
         strip_prefix = "octomap-release-release-indigo-octomap-1.6.9-0",
     )
 
     native.new_http_archive(
-        name = "orocos_kdl_repo",
+        name = "orocos_kdl",
         build_file = "@com_github_nicolov_ros_bazel//:packages/orocos_kdl.BUILD",
         url = "https://github.com/smits/orocos-kdl-release/archive/release/indigo/orocos_kdl/1.3.1-0.tar.gz",
         strip_prefix = "orocos-kdl-release-release-indigo-orocos_kdl-1.3.1-0",
     )
 
     native.new_http_archive(
-        name = "pcl_conversions_repo",
+        name = "pcl_conversions",
         build_file = "@com_github_nicolov_ros_bazel//:packages/pcl_conversions.BUILD",
         url = "https://github.com/ros-gbp/pcl_conversions-release/archive/release/indigo/pcl_conversions/0.2.1-0.tar.gz",
         strip_prefix = "pcl_conversions-release-release-indigo-pcl_conversions-0.2.1-0",
     )
 
     native.new_http_archive(
-        name = "pcl_msgs_repo",
+        name = "pcl_msgs",
         build_file = "@com_github_nicolov_ros_bazel//:packages/pcl_msgs.BUILD",
         url = "https://github.com/ros-gbp/pcl_msgs-release/archive/release/indigo/pcl_msgs/0.2.0-0.tar.gz",
         strip_prefix = "pcl_msgs-release-release-indigo-pcl_msgs-0.2.0-0",
     )
 
     native.new_http_archive(
-        name = "pcl_ros_repo",
+        name = "pcl_ros",
         build_file = "@com_github_nicolov_ros_bazel//:packages/pcl_ros.BUILD",
         url = "https://github.com/ros-gbp/perception_pcl-release/archive/release/indigo/pcl_ros/1.2.7-0.tar.gz",
         strip_prefix = "perception_pcl-release-release-indigo-pcl_ros-1.2.7-0",
     )
 
     native.new_http_archive(
-        name = "perception_repo",
+        name = "perception",
         build_file = "@com_github_nicolov_ros_bazel//:packages/perception.BUILD",
         url = "https://github.com/ros-gbp/metapackages-release/archive/release/indigo/perception/1.1.5-0.tar.gz",
         strip_prefix = "metapackages-release-release-indigo-perception-1.1.5-0",
     )
 
     native.new_http_archive(
-        name = "perception_pcl_repo",
+        name = "perception_pcl",
         build_file = "@com_github_nicolov_ros_bazel//:packages/perception_pcl.BUILD",
         url = "https://github.com/ros-gbp/perception_pcl-release/archive/release/indigo/perception_pcl/1.2.7-0.tar.gz",
         strip_prefix = "perception_pcl-release-release-indigo-perception_pcl-1.2.7-0",
     )
 
     native.new_http_archive(
-        name = "pluginlib_repo",
+        name = "pluginlib",
         build_file = "@com_github_nicolov_ros_bazel//:packages/pluginlib.BUILD",
         url = "https://github.com/ros-gbp/pluginlib-release/archive/release/indigo/pluginlib/1.10.5-0.tar.gz",
         strip_prefix = "pluginlib-release-release-indigo-pluginlib-1.10.5-0",
     )
 
     native.new_http_archive(
-        name = "pointcloud_to_laserscan_repo",
+        name = "pointcloud_to_laserscan",
         build_file = "@com_github_nicolov_ros_bazel//:packages/pointcloud_to_laserscan.BUILD",
         url = "https://github.com/ros-gbp/pointcloud_to_laserscan-release/archive/release/indigo/pointcloud_to_laserscan/1.3.1-0.tar.gz",
         strip_prefix = "pointcloud_to_laserscan-release-release-indigo-pointcloud_to_laserscan-1.3.1-0",
     )
 
     native.new_http_archive(
-        name = "polled_camera_repo",
+        name = "polled_camera",
         build_file = "@com_github_nicolov_ros_bazel//:packages/polled_camera.BUILD",
         url = "https://github.com/ros-gbp/image_common-release/archive/release/indigo/polled_camera/1.11.12-0.tar.gz",
         strip_prefix = "image_common-release-release-indigo-polled_camera-1.11.12-0",
     )
 
     native.new_http_archive(
-        name = "python_orocos_kdl_repo",
+        name = "python_orocos_kdl",
         build_file = "@com_github_nicolov_ros_bazel//:packages/python_orocos_kdl.BUILD",
         url = "https://github.com/smits/orocos-kdl-release/archive/release/indigo/python_orocos_kdl/1.3.1-0.tar.gz",
         strip_prefix = "orocos-kdl-release-release-indigo-python_orocos_kdl-1.3.1-0",
     )
 
     native.new_http_archive(
-        name = "random_numbers_repo",
+        name = "random_numbers",
         build_file = "@com_github_nicolov_ros_bazel//:packages/random_numbers.BUILD",
         url = "https://github.com/ros-gbp/random_numbers-release/archive/release/indigo/random_numbers/0.3.0-0.tar.gz",
         strip_prefix = "random_numbers-release-release-indigo-random_numbers-0.3.0-0",
     )
 
     native.new_http_archive(
-        name = "resource_retriever_repo",
+        name = "resource_retriever",
         build_file = "@com_github_nicolov_ros_bazel//:packages/resource_retriever.BUILD",
         url = "https://github.com/ros-gbp/resource_retriever-release/archive/release/indigo/resource_retriever/1.11.8-0.tar.gz",
         strip_prefix = "resource_retriever-release-release-indigo-resource_retriever-1.11.8-0",
     )
 
     native.new_http_archive(
-        name = "robot_repo",
+        name = "robot",
         build_file = "@com_github_nicolov_ros_bazel//:packages/robot.BUILD",
         url = "https://github.com/ros-gbp/metapackages-release/archive/release/indigo/robot/1.1.5-0.tar.gz",
         strip_prefix = "metapackages-release-release-indigo-robot-1.1.5-0",
     )
 
     native.new_http_archive(
-        name = "robot_model_repo",
+        name = "robot_model",
         build_file = "@com_github_nicolov_ros_bazel//:packages/robot_model.BUILD",
         url = "https://github.com/ros-gbp/robot_model-release/archive/release/indigo/robot_model/1.11.14-0.tar.gz",
         strip_prefix = "robot_model-release-release-indigo-robot_model-1.11.14-0",
     )
 
     native.new_http_archive(
-        name = "robot_state_publisher_repo",
+        name = "robot_state_publisher",
         build_file = "@com_github_nicolov_ros_bazel//:packages/robot_state_publisher.BUILD",
         url = "https://github.com/ros-gbp/robot_state_publisher-release/archive/release/indigo/robot_state_publisher/1.11.2-0.tar.gz",
         strip_prefix = "robot_state_publisher-release-release-indigo-robot_state_publisher-1.11.2-0",
     )
 
     native.new_http_archive(
-        name = "ros_repo",
+        name = "ros",
         build_file = "@com_github_nicolov_ros_bazel//:packages/ros.BUILD",
         url = "https://github.com/ros-gbp/ros-release/archive/release/indigo/ros/1.11.14-0.tar.gz",
         strip_prefix = "ros-release-release-indigo-ros-1.11.14-0",
     )
 
     native.new_http_archive(
-        name = "ros_base_repo",
+        name = "ros_base",
         build_file = "@com_github_nicolov_ros_bazel//:packages/ros_base.BUILD",
         url = "https://github.com/ros-gbp/metapackages-release/archive/release/indigo/ros_base/1.1.5-0.tar.gz",
         strip_prefix = "metapackages-release-release-indigo-ros_base-1.1.5-0",
     )
 
     native.new_http_archive(
-        name = "ros_comm_repo",
+        name = "ros_comm",
         build_file = "@com_github_nicolov_ros_bazel//:packages/ros_comm.BUILD",
         url = "https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/ros_comm/1.11.21-0.tar.gz",
         strip_prefix = "ros_comm-release-release-indigo-ros_comm-1.11.21-0",
     )
 
     native.new_http_archive(
-        name = "ros_core_repo",
+        name = "ros_core",
         build_file = "@com_github_nicolov_ros_bazel//:packages/ros_core.BUILD",
         url = "https://github.com/ros-gbp/metapackages-release/archive/release/indigo/ros_core/1.1.5-0.tar.gz",
         strip_prefix = "metapackages-release-release-indigo-ros_core-1.1.5-0",
     )
 
     native.new_http_archive(
-        name = "rosbag_repo",
+        name = "rosbag",
         build_file = "@com_github_nicolov_ros_bazel//:packages/rosbag.BUILD",
         url = "https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/rosbag/1.11.21-0.tar.gz",
         strip_prefix = "ros_comm-release-release-indigo-rosbag-1.11.21-0",
     )
 
     native.new_http_archive(
-        name = "rosbag_migration_rule_repo",
+        name = "rosbag_migration_rule",
         build_file = "@com_github_nicolov_ros_bazel//:packages/rosbag_migration_rule.BUILD",
         url = "https://github.com/ros-gbp/rosbag_migration_rule-release/archive/release/indigo/rosbag_migration_rule/1.0.0-0.tar.gz",
         strip_prefix = "rosbag_migration_rule-release-release-indigo-rosbag_migration_rule-1.0.0-0",
     )
 
     native.new_http_archive(
-        name = "rosbag_storage_repo",
+        name = "rosbag_storage",
         build_file = "@com_github_nicolov_ros_bazel//:packages/rosbag_storage.BUILD",
         url = "https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/rosbag_storage/1.11.21-0.tar.gz",
         strip_prefix = "ros_comm-release-release-indigo-rosbag_storage-1.11.21-0",
     )
 
     native.new_http_archive(
-        name = "rosbash_repo",
+        name = "rosbash",
         build_file = "@com_github_nicolov_ros_bazel//:packages/rosbash.BUILD",
         url = "https://github.com/ros-gbp/ros-release/archive/release/indigo/rosbash/1.11.14-0.tar.gz",
         strip_prefix = "ros-release-release-indigo-rosbash-1.11.14-0",
     )
 
     native.new_http_archive(
-        name = "rosboost_cfg_repo",
+        name = "rosboost_cfg",
         build_file = "@com_github_nicolov_ros_bazel//:packages/rosboost_cfg.BUILD",
         url = "https://github.com/ros-gbp/ros-release/archive/release/indigo/rosboost_cfg/1.11.14-0.tar.gz",
         strip_prefix = "ros-release-release-indigo-rosboost_cfg-1.11.14-0",
     )
 
     native.new_http_archive(
-        name = "rosbuild_repo",
+        name = "rosbuild",
         build_file = "@com_github_nicolov_ros_bazel//:packages/rosbuild.BUILD",
         url = "https://github.com/ros-gbp/ros-release/archive/release/indigo/rosbuild/1.11.14-0.tar.gz",
         strip_prefix = "ros-release-release-indigo-rosbuild-1.11.14-0",
     )
 
     native.new_http_archive(
-        name = "rosclean_repo",
+        name = "rosclean",
         build_file = "@com_github_nicolov_ros_bazel//:packages/rosclean.BUILD",
         url = "https://github.com/ros-gbp/ros-release/archive/release/indigo/rosclean/1.11.14-0.tar.gz",
         strip_prefix = "ros-release-release-indigo-rosclean-1.11.14-0",
     )
 
     native.new_http_archive(
-        name = "rosconsole_repo",
+        name = "rosconsole",
         build_file = "@com_github_nicolov_ros_bazel//:packages/rosconsole.BUILD",
         url = "https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/rosconsole/1.11.21-0.tar.gz",
         strip_prefix = "ros_comm-release-release-indigo-rosconsole-1.11.21-0",
     )
 
     native.new_http_archive(
-        name = "rosconsole_bridge_repo",
+        name = "rosconsole_bridge",
         build_file = "@com_github_nicolov_ros_bazel//:packages/rosconsole_bridge.BUILD",
         url = "https://github.com/ros-gbp/rosconsole_bridge-release/archive/release/indigo/rosconsole_bridge/0.4.4-0.tar.gz",
         strip_prefix = "rosconsole_bridge-release-release-indigo-rosconsole_bridge-0.4.4-0",
     )
 
     native.new_http_archive(
-        name = "roscpp_repo",
+        name = "roscpp",
         build_file = "@com_github_nicolov_ros_bazel//:packages/roscpp.BUILD",
         url = "https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/roscpp/1.11.21-0.tar.gz",
         strip_prefix = "ros_comm-release-release-indigo-roscpp-1.11.21-0",
     )
 
     native.new_http_archive(
-        name = "roscpp_core_repo",
+        name = "roscpp_core",
         build_file = "@com_github_nicolov_ros_bazel//:packages/roscpp_core.BUILD",
         url = "https://github.com/ros-gbp/roscpp_core-release/archive/release/indigo/roscpp_core/0.5.8-0.tar.gz",
         strip_prefix = "roscpp_core-release-release-indigo-roscpp_core-0.5.8-0",
     )
 
     native.new_http_archive(
-        name = "roscpp_serialization_repo",
+        name = "roscpp_serialization",
         build_file = "@com_github_nicolov_ros_bazel//:packages/roscpp_serialization.BUILD",
         url = "https://github.com/ros-gbp/roscpp_core-release/archive/release/indigo/roscpp_serialization/0.5.8-0.tar.gz",
         strip_prefix = "roscpp_core-release-release-indigo-roscpp_serialization-0.5.8-0",
     )
 
     native.new_http_archive(
-        name = "roscpp_traits_repo",
+        name = "roscpp_traits",
         build_file = "@com_github_nicolov_ros_bazel//:packages/roscpp_traits.BUILD",
         url = "https://github.com/ros-gbp/roscpp_core-release/archive/release/indigo/roscpp_traits/0.5.8-0.tar.gz",
         strip_prefix = "roscpp_core-release-release-indigo-roscpp_traits-0.5.8-0",
     )
 
     native.new_http_archive(
-        name = "roscreate_repo",
+        name = "roscreate",
         build_file = "@com_github_nicolov_ros_bazel//:packages/roscreate.BUILD",
         url = "https://github.com/ros-gbp/ros-release/archive/release/indigo/roscreate/1.11.14-0.tar.gz",
         strip_prefix = "ros-release-release-indigo-roscreate-1.11.14-0",
     )
 
     native.new_http_archive(
-        name = "rosgraph_repo",
+        name = "rosgraph",
         build_file = "@com_github_nicolov_ros_bazel//:packages/rosgraph.BUILD",
         url = "https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/rosgraph/1.11.21-0.tar.gz",
         strip_prefix = "ros_comm-release-release-indigo-rosgraph-1.11.21-0",
     )
 
     native.new_http_archive(
-        name = "rosgraph_msgs_repo",
+        name = "rosgraph_msgs",
         build_file = "@com_github_nicolov_ros_bazel//:packages/rosgraph_msgs.BUILD",
         url = "https://github.com/ros-gbp/ros_comm_msgs-release/archive/release/indigo/rosgraph_msgs/1.11.2-0.tar.gz",
         strip_prefix = "ros_comm_msgs-release-release-indigo-rosgraph_msgs-1.11.2-0",
     )
 
     native.new_http_archive(
-        name = "roslang_repo",
+        name = "roslang",
         build_file = "@com_github_nicolov_ros_bazel//:packages/roslang.BUILD",
         url = "https://github.com/ros-gbp/ros-release/archive/release/indigo/roslang/1.11.14-0.tar.gz",
         strip_prefix = "ros-release-release-indigo-roslang-1.11.14-0",
     )
 
     native.new_http_archive(
-        name = "roslaunch_repo",
+        name = "roslaunch",
         build_file = "@com_github_nicolov_ros_bazel//:packages/roslaunch.BUILD",
         url = "https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/roslaunch/1.11.21-0.tar.gz",
         strip_prefix = "ros_comm-release-release-indigo-roslaunch-1.11.21-0",
     )
 
     native.new_http_archive(
-        name = "roslib_repo",
+        name = "roslib",
         build_file = "@com_github_nicolov_ros_bazel//:packages/roslib.BUILD",
         url = "https://github.com/ros-gbp/ros-release/archive/release/indigo/roslib/1.11.14-0.tar.gz",
         strip_prefix = "ros-release-release-indigo-roslib-1.11.14-0",
     )
 
     native.new_http_archive(
-        name = "roslint_repo",
+        name = "roslint",
         build_file = "@com_github_nicolov_ros_bazel//:packages/roslint.BUILD",
         url = "https://github.com/ros-gbp/roslint-release/archive/release/indigo/roslint/0.10.0-0.tar.gz",
         strip_prefix = "roslint-release-release-indigo-roslint-0.10.0-0",
     )
 
     native.new_http_archive(
-        name = "roslisp_repo",
+        name = "roslisp",
         build_file = "@com_github_nicolov_ros_bazel//:packages/roslisp.BUILD",
         url = "https://github.com/ros-gbp/roslisp-release/archive/release/indigo/roslisp/1.9.21-0.tar.gz",
         strip_prefix = "roslisp-release-release-indigo-roslisp-1.9.21-0",
     )
 
     native.new_http_archive(
-        name = "roslz4_repo",
+        name = "roslz4",
         build_file = "@com_github_nicolov_ros_bazel//:packages/roslz4.BUILD",
         url = "https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/roslz4/1.11.21-0.tar.gz",
         strip_prefix = "ros_comm-release-release-indigo-roslz4-1.11.21-0",
     )
 
     native.new_http_archive(
-        name = "rosmake_repo",
+        name = "rosmake",
         build_file = "@com_github_nicolov_ros_bazel//:packages/rosmake.BUILD",
         url = "https://github.com/ros-gbp/ros-release/archive/release/indigo/rosmake/1.11.14-0.tar.gz",
         strip_prefix = "ros-release-release-indigo-rosmake-1.11.14-0",
     )
 
     native.new_http_archive(
-        name = "rosmaster_repo",
+        name = "rosmaster",
         build_file = "@com_github_nicolov_ros_bazel//:packages/rosmaster.BUILD",
         url = "https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/rosmaster/1.11.21-0.tar.gz",
         strip_prefix = "ros_comm-release-release-indigo-rosmaster-1.11.21-0",
     )
 
     native.new_http_archive(
-        name = "rosmsg_repo",
+        name = "rosmsg",
         build_file = "@com_github_nicolov_ros_bazel//:packages/rosmsg.BUILD",
         url = "https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/rosmsg/1.11.21-0.tar.gz",
         strip_prefix = "ros_comm-release-release-indigo-rosmsg-1.11.21-0",
     )
 
     native.new_http_archive(
-        name = "rosnode_repo",
+        name = "rosnode",
         build_file = "@com_github_nicolov_ros_bazel//:packages/rosnode.BUILD",
         url = "https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/rosnode/1.11.21-0.tar.gz",
         strip_prefix = "ros_comm-release-release-indigo-rosnode-1.11.21-0",
     )
 
     native.new_http_archive(
-        name = "rosout_repo",
+        name = "rosout",
         build_file = "@com_github_nicolov_ros_bazel//:packages/rosout.BUILD",
         url = "https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/rosout/1.11.21-0.tar.gz",
         strip_prefix = "ros_comm-release-release-indigo-rosout-1.11.21-0",
     )
 
     native.new_http_archive(
-        name = "rospack_repo",
+        name = "rospack",
         build_file = "@com_github_nicolov_ros_bazel//:packages/rospack.BUILD",
         url = "https://github.com/ros-gbp/rospack-release/archive/release/indigo/rospack/2.2.8-0.tar.gz",
         strip_prefix = "rospack-release-release-indigo-rospack-2.2.8-0",
     )
 
     native.new_http_archive(
-        name = "rosparam_repo",
+        name = "rosparam",
         build_file = "@com_github_nicolov_ros_bazel//:packages/rosparam.BUILD",
         url = "https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/rosparam/1.11.21-0.tar.gz",
         strip_prefix = "ros_comm-release-release-indigo-rosparam-1.11.21-0",
@@ -798,245 +798,245 @@ def ros_packages():
     )
 
     native.new_http_archive(
-        name = "rosservice_repo",
+        name = "rosservice",
         build_file = "@com_github_nicolov_ros_bazel//:packages/rosservice.BUILD",
         url = "https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/rosservice/1.11.21-0.tar.gz",
         strip_prefix = "ros_comm-release-release-indigo-rosservice-1.11.21-0",
     )
 
     native.new_http_archive(
-        name = "rostest_repo",
+        name = "rostest",
         build_file = "@com_github_nicolov_ros_bazel//:packages/rostest.BUILD",
         url = "https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/rostest/1.11.21-0.tar.gz",
         strip_prefix = "ros_comm-release-release-indigo-rostest-1.11.21-0",
     )
 
     native.new_http_archive(
-        name = "rostime_repo",
+        name = "rostime",
         build_file = "@com_github_nicolov_ros_bazel//:packages/rostime.BUILD",
         url = "https://github.com/ros-gbp/roscpp_core-release/archive/release/indigo/rostime/0.5.8-0.tar.gz",
         strip_prefix = "roscpp_core-release-release-indigo-rostime-0.5.8-0",
     )
 
     native.new_http_archive(
-        name = "rostopic_repo",
+        name = "rostopic",
         build_file = "@com_github_nicolov_ros_bazel//:packages/rostopic.BUILD",
         url = "https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/rostopic/1.11.21-0.tar.gz",
         strip_prefix = "ros_comm-release-release-indigo-rostopic-1.11.21-0",
     )
 
     native.new_http_archive(
-        name = "rosunit_repo",
+        name = "rosunit",
         build_file = "@com_github_nicolov_ros_bazel//:packages/rosunit.BUILD",
         url = "https://github.com/ros-gbp/ros-release/archive/release/indigo/rosunit/1.11.14-0.tar.gz",
         strip_prefix = "ros-release-release-indigo-rosunit-1.11.14-0",
     )
 
     native.new_http_archive(
-        name = "roswtf_repo",
+        name = "roswtf",
         build_file = "@com_github_nicolov_ros_bazel//:packages/roswtf.BUILD",
         url = "https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/roswtf/1.11.21-0.tar.gz",
         strip_prefix = "ros_comm-release-release-indigo-roswtf-1.11.21-0",
     )
 
     native.new_http_archive(
-        name = "self_test_repo",
+        name = "self_test",
         build_file = "@com_github_nicolov_ros_bazel//:packages/self_test.BUILD",
         url = "https://github.com/ros-gbp/diagnostics-release/archive/release/indigo/self_test/1.9.2-0.tar.gz",
         strip_prefix = "diagnostics-release-release-indigo-self_test-1.9.2-0",
     )
 
     native.new_http_archive(
-        name = "sensor_msgs_repo",
+        name = "sensor_msgs",
         build_file = "@com_github_nicolov_ros_bazel//:packages/sensor_msgs.BUILD",
         url = "https://github.com/ros-gbp/common_msgs-release/archive/release/indigo/sensor_msgs/1.11.9-0.tar.gz",
         strip_prefix = "common_msgs-release-release-indigo-sensor_msgs-1.11.9-0",
     )
 
     native.new_http_archive(
-        name = "shape_msgs_repo",
+        name = "shape_msgs",
         build_file = "@com_github_nicolov_ros_bazel//:packages/shape_msgs.BUILD",
         url = "https://github.com/ros-gbp/common_msgs-release/archive/release/indigo/shape_msgs/1.11.9-0.tar.gz",
         strip_prefix = "common_msgs-release-release-indigo-shape_msgs-1.11.9-0",
     )
 
     native.new_http_archive(
-        name = "smach_repo",
+        name = "smach",
         build_file = "@com_github_nicolov_ros_bazel//:packages/smach.BUILD",
         url = "https://github.com/ros-gbp/executive_smach-release/archive/release/indigo/smach/2.0.1-0.tar.gz",
         strip_prefix = "executive_smach-release-release-indigo-smach-2.0.1-0",
     )
 
     native.new_http_archive(
-        name = "smach_msgs_repo",
+        name = "smach_msgs",
         build_file = "@com_github_nicolov_ros_bazel//:packages/smach_msgs.BUILD",
         url = "https://github.com/ros-gbp/executive_smach-release/archive/release/indigo/smach_msgs/2.0.1-0.tar.gz",
         strip_prefix = "executive_smach-release-release-indigo-smach_msgs-2.0.1-0",
     )
 
     native.new_http_archive(
-        name = "smach_ros_repo",
+        name = "smach_ros",
         build_file = "@com_github_nicolov_ros_bazel//:packages/smach_ros.BUILD",
         url = "https://github.com/ros-gbp/executive_smach-release/archive/release/indigo/smach_ros/2.0.1-0.tar.gz",
         strip_prefix = "executive_smach-release-release-indigo-smach_ros-2.0.1-0",
     )
 
     native.new_http_archive(
-        name = "smclib_repo",
+        name = "smclib",
         build_file = "@com_github_nicolov_ros_bazel//:packages/smclib.BUILD",
         url = "https://github.com/ros-gbp/bond_core-release/archive/release/indigo/smclib/1.7.19-0.tar.gz",
         strip_prefix = "bond_core-release-release-indigo-smclib-1.7.19-0",
     )
 
     native.new_http_archive(
-        name = "std_msgs_repo",
+        name = "std_msgs",
         build_file = "@com_github_nicolov_ros_bazel//:packages/std_msgs.BUILD",
         url = "https://github.com/ros-gbp/std_msgs-release/archive/release/indigo/std_msgs/0.5.10-0.tar.gz",
         strip_prefix = "std_msgs-release-release-indigo-std_msgs-0.5.10-0",
     )
 
     native.new_http_archive(
-        name = "std_srvs_repo",
+        name = "std_srvs",
         build_file = "@com_github_nicolov_ros_bazel//:packages/std_srvs.BUILD",
         url = "https://github.com/ros-gbp/ros_comm_msgs-release/archive/release/indigo/std_srvs/1.11.2-0.tar.gz",
         strip_prefix = "ros_comm_msgs-release-release-indigo-std_srvs-1.11.2-0",
     )
 
     native.new_http_archive(
-        name = "stereo_image_proc_repo",
+        name = "stereo_image_proc",
         build_file = "@com_github_nicolov_ros_bazel//:packages/stereo_image_proc.BUILD",
         url = "https://github.com/ros-gbp/image_pipeline-release/archive/release/indigo/stereo_image_proc/1.12.20-0.tar.gz",
         strip_prefix = "image_pipeline-release-release-indigo-stereo_image_proc-1.12.20-0",
     )
 
     native.new_http_archive(
-        name = "stereo_msgs_repo",
+        name = "stereo_msgs",
         build_file = "@com_github_nicolov_ros_bazel//:packages/stereo_msgs.BUILD",
         url = "https://github.com/ros-gbp/common_msgs-release/archive/release/indigo/stereo_msgs/1.11.9-0.tar.gz",
         strip_prefix = "common_msgs-release-release-indigo-stereo_msgs-1.11.9-0",
     )
 
     native.new_http_archive(
-        name = "tf_repo",
+        name = "tf",
         build_file = "@com_github_nicolov_ros_bazel//:packages/tf.BUILD",
         url = "https://github.com/ros-gbp/geometry-release/archive/release/indigo/tf/1.11.9-0.tar.gz",
         strip_prefix = "geometry-release-release-indigo-tf-1.11.9-0",
     )
 
     native.new_http_archive(
-        name = "tf2_repo",
+        name = "tf2",
         build_file = "@com_github_nicolov_ros_bazel//:packages/tf2.BUILD",
         url = "https://github.com/ros-gbp/geometry2-release/archive/release/indigo/tf2/0.5.16-0.tar.gz",
         strip_prefix = "geometry2-release-release-indigo-tf2-0.5.16-0",
     )
 
     native.new_http_archive(
-        name = "tf2_geometry_msgs_repo",
+        name = "tf2_geometry_msgs",
         build_file = "@com_github_nicolov_ros_bazel//:packages/tf2_geometry_msgs.BUILD",
         url = "https://github.com/ros-gbp/geometry2-release/archive/release/indigo/tf2_geometry_msgs/0.5.16-0.tar.gz",
         strip_prefix = "geometry2-release-release-indigo-tf2_geometry_msgs-0.5.16-0",
     )
 
     native.new_http_archive(
-        name = "tf2_kdl_repo",
+        name = "tf2_kdl",
         build_file = "@com_github_nicolov_ros_bazel//:packages/tf2_kdl.BUILD",
         url = "https://github.com/ros-gbp/geometry2-release/archive/release/indigo/tf2_kdl/0.5.16-0.tar.gz",
         strip_prefix = "geometry2-release-release-indigo-tf2_kdl-0.5.16-0",
     )
 
     native.new_http_archive(
-        name = "tf2_msgs_repo",
+        name = "tf2_msgs",
         build_file = "@com_github_nicolov_ros_bazel//:packages/tf2_msgs.BUILD",
         url = "https://github.com/ros-gbp/geometry2-release/archive/release/indigo/tf2_msgs/0.5.16-0.tar.gz",
         strip_prefix = "geometry2-release-release-indigo-tf2_msgs-0.5.16-0",
     )
 
     native.new_http_archive(
-        name = "tf2_py_repo",
+        name = "tf2_py",
         build_file = "@com_github_nicolov_ros_bazel//:packages/tf2_py.BUILD",
         url = "https://github.com/ros-gbp/geometry2-release/archive/release/indigo/tf2_py/0.5.16-0.tar.gz",
         strip_prefix = "geometry2-release-release-indigo-tf2_py-0.5.16-0",
     )
 
     native.new_http_archive(
-        name = "tf2_ros_repo",
+        name = "tf2_ros",
         build_file = "@com_github_nicolov_ros_bazel//:packages/tf2_ros.BUILD",
         url = "https://github.com/ros-gbp/geometry2-release/archive/release/indigo/tf2_ros/0.5.16-0.tar.gz",
         strip_prefix = "geometry2-release-release-indigo-tf2_ros-0.5.16-0",
     )
 
     native.new_http_archive(
-        name = "tf2_sensor_msgs_repo",
+        name = "tf2_sensor_msgs",
         build_file = "@com_github_nicolov_ros_bazel//:packages/tf2_sensor_msgs.BUILD",
         url = "https://github.com/ros-gbp/geometry2-release/archive/release/indigo/tf2_sensor_msgs/0.5.16-0.tar.gz",
         strip_prefix = "geometry2-release-release-indigo-tf2_sensor_msgs-0.5.16-0",
     )
 
     native.new_http_archive(
-        name = "tf_conversions_repo",
+        name = "tf_conversions",
         build_file = "@com_github_nicolov_ros_bazel//:packages/tf_conversions.BUILD",
         url = "https://github.com/ros-gbp/geometry-release/archive/release/indigo/tf_conversions/1.11.9-0.tar.gz",
         strip_prefix = "geometry-release-release-indigo-tf_conversions-1.11.9-0",
     )
 
     native.new_http_archive(
-        name = "theora_image_transport_repo",
+        name = "theora_image_transport",
         build_file = "@com_github_nicolov_ros_bazel//:packages/theora_image_transport.BUILD",
         url = "https://github.com/ros-gbp/image_transport_plugins-release/archive/release/indigo/theora_image_transport/1.9.5-0.tar.gz",
         strip_prefix = "image_transport_plugins-release-release-indigo-theora_image_transport-1.9.5-0",
     )
 
     native.new_http_archive(
-        name = "topic_tools_repo",
+        name = "topic_tools",
         build_file = "@com_github_nicolov_ros_bazel//:packages/topic_tools.BUILD",
         url = "https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/topic_tools/1.11.21-0.tar.gz",
         strip_prefix = "ros_comm-release-release-indigo-topic_tools-1.11.21-0",
     )
 
     native.new_http_archive(
-        name = "trajectory_msgs_repo",
+        name = "trajectory_msgs",
         build_file = "@com_github_nicolov_ros_bazel//:packages/trajectory_msgs.BUILD",
         url = "https://github.com/ros-gbp/common_msgs-release/archive/release/indigo/trajectory_msgs/1.11.9-0.tar.gz",
         strip_prefix = "common_msgs-release-release-indigo-trajectory_msgs-1.11.9-0",
     )
 
     native.new_http_archive(
-        name = "urdf_repo",
+        name = "urdf",
         build_file = "@com_github_nicolov_ros_bazel//:packages/urdf.BUILD",
         url = "https://github.com/ros-gbp/robot_model-release/archive/release/indigo/urdf/1.11.14-0.tar.gz",
         strip_prefix = "robot_model-release-release-indigo-urdf-1.11.14-0",
     )
 
     native.new_http_archive(
-        name = "urdf_parser_plugin_repo",
+        name = "urdf_parser_plugin",
         build_file = "@com_github_nicolov_ros_bazel//:packages/urdf_parser_plugin.BUILD",
         url = "https://github.com/ros-gbp/robot_model-release/archive/release/indigo/urdf_parser_plugin/1.11.14-0.tar.gz",
         strip_prefix = "robot_model-release-release-indigo-urdf_parser_plugin-1.11.14-0",
     )
 
     native.new_http_archive(
-        name = "vision_opencv_repo",
+        name = "vision_opencv",
         build_file = "@com_github_nicolov_ros_bazel//:packages/vision_opencv.BUILD",
         url = "https://github.com/ros-gbp/vision_opencv-release/archive/release/indigo/vision_opencv/1.11.15-0.tar.gz",
         strip_prefix = "vision_opencv-release-release-indigo-vision_opencv-1.11.15-0",
     )
 
     native.new_http_archive(
-        name = "visualization_msgs_repo",
+        name = "visualization_msgs",
         build_file = "@com_github_nicolov_ros_bazel//:packages/visualization_msgs.BUILD",
         url = "https://github.com/ros-gbp/common_msgs-release/archive/release/indigo/visualization_msgs/1.11.9-0.tar.gz",
         strip_prefix = "common_msgs-release-release-indigo-visualization_msgs-1.11.9-0",
     )
 
     native.new_http_archive(
-        name = "xacro_repo",
+        name = "xacro",
         build_file = "@com_github_nicolov_ros_bazel//:packages/xacro.BUILD",
         url = "https://github.com/ros-gbp/xacro-release/archive/release/indigo/xacro/1.9.5-0.tar.gz",
         strip_prefix = "xacro-release-release-indigo-xacro-1.9.5-0",
     )
 
     native.new_http_archive(
-        name = "xmlrpcpp_repo",
+        name = "xmlrpcpp",
         build_file = "@com_github_nicolov_ros_bazel//:packages/xmlrpcpp.BUILD",
         url = "https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/xmlrpcpp/1.11.21-0.tar.gz",
         strip_prefix = "ros_comm-release-release-indigo-xmlrpcpp-1.11.21-0",

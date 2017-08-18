@@ -6,7 +6,7 @@ load("@com_github_nicolov_ros_bazel//:tools/message_generation.bzl",
 generate_messages(
     ros_package_name='nodelet',
     deps = [
-        '@std_msgs_repo//:msgs',
+        '@std_msgs//:msgs',
     ],
 )
 
@@ -22,12 +22,12 @@ cc_library(
     strip_include_prefix='include',
     deps=[
         ':msgs_cpp',
-        '@bondcpp_repo//:cclib',
+        '@bondcpp//:cclib',
         '@boost//:system',
-        '@cpp_common_repo//:cclib',
-        '@pluginlib_repo//:cclib',
-        '@rosconsole_repo//:cclib',
-        '@roscpp_repo//:cclib',
+        '@cpp_common//:cclib',
+        '@pluginlib//:cclib',
+        '@rosconsole//:cclib',
+        '@roscpp//:cclib',
     ],
 )
 

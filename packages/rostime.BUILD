@@ -6,7 +6,7 @@ cc_library(
     hdrs=glob(['include/**/*.h', 'include/**/*.hpp']),
     strip_include_prefix='include',
     deps=[
-        '@cpp_common_repo//:cclib',
+        '@cpp_common//:cclib',
         '@boost//:system',
     ],
 )

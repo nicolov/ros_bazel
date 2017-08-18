@@ -10,9 +10,9 @@ cc_library(
     strip_include_prefix='include',
     deps=[
         '@boost//:system',
-        '@cpp_common_repo//:cclib',
+        '@cpp_common//:cclib',
         '@opencv',
-        '@sensor_msgs_repo//:cclib',
+        '@sensor_msgs//:cclib',
     ],
 )
 

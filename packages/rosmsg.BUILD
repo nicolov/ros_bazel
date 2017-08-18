@@ -1,15 +1,15 @@
 package(default_visibility = ["//visibility:public"])
 
 load("@com_github_nicolov_ros_bazel//:tools/ros_interop.bzl",
-     "add_py_extension")
+     "add_py_extension",
+     "catkin_python_library")
 
-py_library(
+catkin_python_library(
     name = 'pylib',
-    srcs = glob(['src/**/*.py']),
-    imports = ['src'],
+    py_module_name = 'rosmsg',
     deps = [
-        '@rosbag_repo//:pylib',
-        '@roslib_repo//:pylib',
+        '@rosbag//:pylib',
+        '@roslib//:pylib',
     ],
 )
 

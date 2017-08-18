@@ -6,7 +6,7 @@ cc_binary(
         'src/rosout.c',
     ],
     deps=[
-        '@roscpp_repo//:cclib',
-        '@rosgraph_msgs_repo//:msgs_cpp',
+        '@roscpp//:cclib',
+        '@rosgraph_msgs//:msgs_cpp',
     ],
 )

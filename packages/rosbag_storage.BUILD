@@ -23,10 +23,10 @@ cc_library(
     deps=[
         '@boost//:headers',
         '@bz2',
-        '@cpp_common_repo//:cclib',
-        '@roscpp_serialization_repo//:cclib',
-        '@roscpp_traits_repo//:cclib',
-        '@rostime_repo//:cclib',
-        '@roslz4_repo//:cclib',
+        '@cpp_common//:cclib',
+        '@roscpp_serialization//:cclib',
+        '@roscpp_traits//:cclib',
+        '@rostime//:cclib',
+        '@roslz4//:cclib',
     ],
 )

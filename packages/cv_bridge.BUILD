@@ -14,9 +14,9 @@ cc_library(
     strip_include_prefix='include',
     deps=[
         '@boost//:headers',
-        '@rosconsole_repo//:cclib',
+        '@rosconsole//:cclib',
         '@opencv',
-        '@sensor_msgs_repo//:cclib',
+        '@sensor_msgs//:cclib',
     ],
 )
 

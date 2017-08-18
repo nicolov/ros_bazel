@@ -2,6 +2,12 @@ package(default_visibility = ["//visibility:public"])
 
 load("@com_github_nicolov_ros_bazel//:tools/message_generation.bzl", "generate_messages")
 load("@com_github_nicolov_ros_bazel//:tools/cmake_configure_file.bzl", "cmake_configure_file")
+load("@com_github_nicolov_ros_bazel//:tools/ros_interop.bzl",
+     "py_import_shim")
+
+py_import_shim(
+    py_module_name = 'std_msgs',
+)
 
 generate_messages(
     ros_package_name='roscpp',
@@ -93,14 +99,14 @@ cc_library(
     strip_include_prefix='include',
     deps=[
         '@boost//:filesystem',
-        '@cpp_common_repo//:cclib',
-        '@rosconsole_repo//:cclib',
-        '@roscpp_serialization_repo//:cclib',
-        '@roscpp_traits_repo//:cclib',
-        '@rosgraph_msgs_repo//:msgs_cpp',
-        '@rostime_repo//:cclib',
-        '@std_msgs_repo//:msgs_cpp',
-        '@xmlrpcpp_repo//:cclib',
+        '@cpp_common//:cclib',
+        '@rosconsole//:cclib',
+        '@roscpp_serialization//:cclib',
+        '@roscpp_traits//:cclib',
+        '@rosgraph_msgs//:msgs_cpp',
+        '@rostime//:cclib',
+        '@std_msgs//:msgs_cpp',
+        '@xmlrpcpp//:cclib',
         ':msgs_cpp',
     ],
 )

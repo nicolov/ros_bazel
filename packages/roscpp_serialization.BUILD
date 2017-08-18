@@ -8,6 +8,6 @@ cc_library(
     ],
     strip_include_prefix='include',
     deps=[
-        '@roscpp_traits_repo//:cclib',
+        '@roscpp_traits//:cclib',
     ],
 )

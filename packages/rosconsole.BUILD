@@ -16,9 +16,9 @@ cc_library(
         '@boost//:regex',
         '@boost//:system',
         '@boost//:thread',
-        '@cpp_common_repo//:cclib',
+        '@cpp_common//:cclib',
         '@glog',
-        '@rostime_repo//:cclib',
+        '@rostime//:cclib',
     ],
 )
 

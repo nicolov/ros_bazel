@@ -1,7 +1,8 @@
 package(default_visibility = ["//visibility:public"])
 
 load("@com_github_nicolov_ros_bazel//:tools/ros_interop.bzl",
-     "add_py_extension")
+     "add_py_extension",
+     "catkin_python_library")
 
 cc_library(
     name = 'cclib',
@@ -13,9 +14,9 @@ cc_library(
     hdrs = glob(['include/**/*.h', 'include/**/*.hpp']),
     strip_include_prefix = 'include',
     deps = [
-        '@rosbag_storage_repo//:cclib',
-        '@roscpp_repo//:cclib',
-        '@topic_tools_repo//:cclib',
+        '@rosbag_storage//:cclib',
+        '@roscpp//:cclib',
+        '@topic_tools//:cclib',
     ],
 )
 
@@ -41,12 +42,11 @@ cc_binary(
     ],
 )
 
-py_library(
+catkin_python_library(
     name = 'pylib',
-    srcs = glob(['src/**/*.py']),
-    imports = ['src'],
+    py_module_name = 'rosbag',
     deps = [
-        '@rospy_repo//:pylib',
+        '@rospy//:pylib',
     ],
 )
 

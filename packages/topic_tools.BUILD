@@ -9,6 +9,6 @@ cc_library(
     hdrs=glob(['include/**/*.h', 'include/**/*.hpp']),
     strip_include_prefix='include',
     deps=[
-        '@roscpp_repo//:cclib',
+        '@roscpp//:cclib',
     ],
 )

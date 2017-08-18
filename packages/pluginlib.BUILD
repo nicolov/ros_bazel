@@ -14,9 +14,9 @@ cc_library(
     hdrs=glob(['include/**/*.h', 'include/**/*.hpp']),
     strip_include_prefix='include',
     deps=[
-        '@class_loader_repo//:cclib',
-        '@rosconsole_repo//:cclib',
-        '@roslib_repo//:cclib',
+        '@class_loader//:cclib',
+        '@rosconsole//:cclib',
+        '@roslib//:cclib',
         '@boost//:system',
         '@boost//:filesystem',
     ],

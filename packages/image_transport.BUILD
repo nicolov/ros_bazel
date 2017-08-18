@@ -20,12 +20,12 @@ cc_library(
     hdrs=glob(['include/**/*.h', 'include/**/*.hpp']),
     strip_include_prefix='include',
     deps=[
-        '@message_filters_repo//:cclib',
-        '@pluginlib_repo//:cclib',
-        '@rosconsole_repo//:cclib',
-        '@roscpp_repo//:cclib',
-        '@roslib_repo//:cclib',
-        '@sensor_msgs_repo//:msgs_cpp',
+        '@message_filters//:cclib',
+        '@pluginlib//:cclib',
+        '@rosconsole//:cclib',
+        '@roscpp//:cclib',
+        '@roslib//:cclib',
+        '@sensor_msgs//:msgs_cpp',
     ],
 )
 
@@ -39,12 +39,12 @@ cc_binary(
     ],
     deps = [
         ':cclib',
-        '@message_filters_repo//:cclib',
-        '@pluginlib_repo//:cclib',
-        '@rosconsole_repo//:cclib',
-        '@roscpp_repo//:cclib',
-        '@roslib_repo//:cclib',
-        '@sensor_msgs_repo//:msgs_cpp',
+        '@message_filters//:cclib',
+        '@pluginlib//:cclib',
+        '@rosconsole//:cclib',
+        '@roscpp//:cclib',
+        '@roslib//:cclib',
+        '@sensor_msgs//:msgs_cpp',
     ],
 )
 

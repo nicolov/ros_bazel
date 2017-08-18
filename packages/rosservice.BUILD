@@ -1,18 +1,18 @@
 package(default_visibility = ["//visibility:public"])
 
 load("@com_github_nicolov_ros_bazel//:tools/ros_interop.bzl",
-     "add_py_extension")
+     "add_py_extension",
+     "catkin_python_library")
 
-py_library(
+catkin_python_library(
     name = 'pylib',
-    srcs = glob(['src/**/*.py']),
-    imports = ['src'],
+    py_module_name = 'rosservice',
     deps = [
-        '@genpy_repo//:pylib',
-        '@rosgraph_repo//:pylib',
-        '@roslib_repo//:pylib',
-        '@rosmsg_repo//:pylib',
-        '@rospy_repo//:pylib',
+        '@genpy//:pylib',
+        '@rosgraph//:pylib',
+        '@roslib//:pylib',
+        '@rosmsg//:pylib',
+        '@rospy//:pylib',
     ],
 )
 

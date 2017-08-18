@@ -10,12 +10,12 @@ cc_library(
     hdrs=glob(['include/**/*.h', 'include/**/*.hpp']),
     strip_include_prefix='include',
     deps=[
-        '@geometry_msgs_repo//:msgs_cpp',
-        '@roscpp_serialization_repo//:cclib',
-        '@roscpp_traits_repo//:cclib',
-        '@rostime_repo//:cclib',
-        '@std_msgs_repo//:msgs_cpp',
-        '@tf2_msgs_repo//:msgs_cpp',
+        '@geometry_msgs//:msgs_cpp',
+        '@roscpp_serialization//:cclib',
+        '@roscpp_traits//:cclib',
+        '@rostime//:cclib',
+        '@std_msgs//:msgs_cpp',
+        '@tf2_msgs//:msgs_cpp',
     ],
 )
 
@@ -43,6 +43,6 @@ cc_test(
     deps=[
         ':cclib',
         '@gtest//:main',
-        '@roscpp_repo//:cclib',
+        '@roscpp//:cclib',
     ],
 )
