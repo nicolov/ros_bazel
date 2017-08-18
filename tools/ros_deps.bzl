@@ -69,6 +69,12 @@ def ros_deps():
         build_file = "@com_github_nicolov_ros_bazel//:third_party/uuid.BUILD",
     )
 
+    native.new_local_repository(
+        name = "netifaces",
+        path = "/usr/lib/python2.7/dist-packages/",
+        build_file = "@com_github_nicolov_ros_bazel//:third_party/netifaces.BUILD",
+    )
+
     python_repository(
         name = "python",
         version = "2.7",

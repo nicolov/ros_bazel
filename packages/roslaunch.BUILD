@@ -27,5 +27,6 @@ py_binary(
     ],
     deps = [
         ':pylib',
+        '@netifaces',
     ],
 )

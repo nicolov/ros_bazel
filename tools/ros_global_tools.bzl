@@ -10,4 +10,5 @@ ROS_GLOBAL_TOOLS = [
     '@rospack_repo//:rospack',
     '@rosservice_repo//:rosservice',
     '@rostopic_repo//:rostopic',
+    '@rosmaster_repo//:rosmaster',
 ]
