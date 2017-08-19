@@ -4,10 +4,9 @@ load("@com_github_nicolov_ros_bazel//:tools/message_generation.bzl",
      "generate_messages")
 
 generate_messages(
-    ros_package_name='std_msgs',
+    ros_package_name='tf',
     deps = [
         '@geometry_msgs_repo//:msgs',
-        '@sensor_msgs_repo//:msgs',
     ],
 )
 
@@ -22,8 +21,12 @@ cc_library(
     hdrs=glob(['include/**/*.h', 'include/**/*.hpp']),
     strip_include_prefix='include',
     deps=[
-        '@roscpp_repo//:cclib',
         ':msgs_cpp',
+        '@angles_repo//:cclib',
+        '@roscpp_repo//:cclib',
+        '@sensor_msgs_repo//:cclib',
+        '@tf2_repo//:cclib',
+        '@tf2_ros_repo//:cclib',
     ],
 )
 
