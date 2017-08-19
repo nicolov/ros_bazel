@@ -25,7 +25,10 @@ load("@com_github_nicolov_ros_bazel//:tools/path_utils.bzl",
     "basename",
     "dirname",
     "join_paths"
-) 
+)
+
+load("@com_github_nicolov_ros_bazel//:tools/action_generation.bzl",
+     "generate_actions")
 
 #
 # Plumbing for transitive dependencies
@@ -37,11 +40,21 @@ def _msgs_sources_impl(ctx):
     # Keep track of include directories of transitive dependencies, and
     # their .msg files (for sandboxing)
     if ctx.files.srcs:
+        # Find all directories with *.msg files, and add them to the
+        # include flags. For example, in the case of actions, we have
+        # both the original *.msg and the generated ones from the
+        # actions, and they live in different directories.
+        all_msg_paths = []
+        for s in ctx.files.srcs:
+            if s.dirname not in all_msg_paths:
+                all_msg_paths.append(s.dirname)
+
+        # Now format them with the name of the current package
         msg_include_dirs = [
-            '%s:%s' % (ctx.attr.ros_package_name, ctx.files.srcs[0].dirname),
+            '%s:%s' % (ctx.attr.ros_package_name, p)
+            for p in all_msg_paths
         ]
     else:
-        print("Empty .msg list for '%s'" % ctx.attr.ros_package_name)
         msg_include_dirs = []
 
     srcs_closure = ctx.files.srcs
@@ -276,10 +289,14 @@ def generate_messages(ros_package_name=None,
     # Separate msg and srv sources
     msg_srcs = native.glob(['msg/*.msg'])
     srv_srcs = native.glob(['srv/*.srv'])
-    all_srcs = msg_srcs + srv_srcs
+
+    # Generate *.msg from *.action, and add them to the original list.
+    action_srcs = native.glob(['action/*.action'])
+    msg_srcs += generate_actions(action_srcs, ros_package_name)
 
     # Collect all .msg sources to track their transitive dependencies,
-    # and track their dependencies.
+    # and track their dependencies. Note that we don't need to that
+    # for *.srv files, since they can't be imported.
     _msgs_sources(
         name = 'msgs',
         ros_package_name = ros_package_name,
@@ -295,7 +312,10 @@ def generate_messages(ros_package_name=None,
 
     # Generate code for each message, and collect the outputs (we'll
     # use the list to generate the cc_library later).
-    # The C++ generator is the same for both .msg & .srv
+    # The C++ generator is the same for both .msg & .srv, so we can
+    # just collect them together.
+    all_srcs = msg_srcs + srv_srcs
+
     for i, src in enumerate(all_srcs):
         this_msg_outs = _cpp_outs_for_file(src, ros_package_name)
 

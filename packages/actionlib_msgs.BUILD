@@ -9,3 +9,13 @@ generate_messages(
         '@std_msgs_repo//:msgs',
     ],
 )
+
+py_binary(
+    name = 'genaction',
+    srcs = [
+        'scripts/genaction.py',
+    ],
+    deps = [
+
+    ],
+)
