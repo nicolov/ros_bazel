@@ -64,7 +64,7 @@ def _symlink_file_impl(ctx):
         ),
     )
 
-_symlink_file = rule(
+symlink_file = rule(
     implementation = _symlink_file_impl,
     attrs = {
         'src': attr.label(mandatory=True, allow_files=True, single_file=True),
@@ -78,7 +78,7 @@ def symlink_files(srcs):
     # Symlink files to the build space, for example .launch files
 
     for src in srcs:
-        _symlink_file(
+        symlink_file(
             name = 'symlink_' + basename(src),
             src = src,
             dest = 'share/' + src,
@@ -88,7 +88,7 @@ def symlink_files(srcs):
 #
 
 def add_extension(src, ext):
-    _symlink_file(
+    symlink_file(
         name = 'add_extension_%s_%s' % (src, ext),
         src = src,
         dest = src + ext,
