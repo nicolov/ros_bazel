@@ -4,7 +4,7 @@ package(default_visibility = ["//visibility:public"])
 cc_library(
     name = 'uuid',
     hdrs = [
-    	'include/uuid/uuid.h',
+        'include/uuid/uuid.h',
     ],
     strip_include_prefix = 'include',
     srcs= [
