@@ -83,6 +83,8 @@ def generate_dynamic_reconfigure_options(ros_package_name,
     for cfg_src in cfg_srcs:
         cfg_name = basename(cfg_src).split('.')[0]
         cpp_outs, py_outs = outs_for_cfg_file(cfg_src, ros_package_name)
+        # Collect all C++ outputs
+        all_cpp_outs += cpp_outs
 
         # The .cfg file is its own generator, so we create a py_binary
         # for it. We also need to work around the fact that the py_binary
@@ -109,4 +111,12 @@ def generate_dynamic_reconfigure_options(ros_package_name,
             outs = cpp_outs + py_outs,
         )
 
-        # 
+    native.cc_library(
+        name = 'dynamic_reconfigure_cpp',
+        srcs = all_cpp_outs,
+        visibility = ["//visibility:public"],
+        deps = [
+            # '@roscpp_serialization_repo//:cclib',
+        ],
+        includes=['']
+    )

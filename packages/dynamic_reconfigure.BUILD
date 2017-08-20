@@ -41,3 +41,30 @@ cc_library(
         '@boost//:thread',
     ],
 )
+
+# Tests
+
+cc_test(
+    name = 'ref_server',
+    srcs = [
+        'test/ref_server.cpp',
+    ],
+    deps = [
+        ':cclib',
+        ':dynamic_reconfigure_cpp',
+        ':msgs_cpp',
+        '@roscpp_repo//:cclib',
+    ],
+)
+
+cc_test(
+    name = 'simple_client',
+    srcs = [
+        'test/test_client.cpp',
+    ],
+    deps = [
+        ':cclib',
+        '@gtest//:main',
+        '@roscpp_repo//:cclib',
+    ],
+)
