@@ -332,7 +332,10 @@ def generate_messages(ros_package_name=None,
 
     native.cc_library(
         name='msgs_cpp',
-        srcs=cpp_outs,
+        hdrs=cpp_outs,
+        # With this, Bazel adds -Isystem pointing to the path with
+        # generated *.h
+        includes=[''],
         visibility=["//visibility:public"],
         deps=[
             '@roscpp_serialization_repo//:cclib',
@@ -340,7 +343,6 @@ def generate_messages(ros_package_name=None,
             # See note for python below
             x + '_cpp' for x in deps
         ],
-        includes=['']
     )
 
     #
