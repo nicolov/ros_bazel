@@ -116,6 +116,7 @@ def generate_dynamic_reconfigure_options(ros_package_name,
         srcs = all_cpp_outs,
         visibility = ["//visibility:public"],
         deps = [
+            Label('@dynamic_reconfigure_repo//:cclib'),
             Label('@dynamic_reconfigure_repo//:msgs_cpp'),
         ],
         includes=['']
