@@ -19,7 +19,7 @@ def ros_deps():
     )
 
     native.new_http_archive(
-        name = "eigen_archive",
+        name = "eigen",
         urls = [
             "http://mirror.bazel.build/bitbucket.org/eigen/eigen/get/f3a22f35b044.tar.gz",
             "https://bitbucket.org/eigen/eigen/get/f3a22f35b044.tar.gz",
