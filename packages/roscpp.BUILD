@@ -31,7 +31,6 @@ cmake_configure_file(
 cc_library(
     name='cclib',
     srcs=[
-        'include/ros/common.h',
         'src/libros/callback_queue.cpp',
         'src/libros/common.cpp',
         'src/libros/config.h',
@@ -84,10 +83,13 @@ cc_library(
     hdrs=glob([
         'include/**/*.h',
         'include/**/*.hpp'
-    ]),
+    ]) + [
+        'include/ros/common.h',
+    ],
     includes=[
-        'include',
-        'include/ros',
+        # TODO: this doesn't belong here, as it's unnecessarily exported to
+        # dependents too. Replace it with a combination of copts and makefile
+        # substitution.
         'src/libros',
     ],
     strip_include_prefix='include',
