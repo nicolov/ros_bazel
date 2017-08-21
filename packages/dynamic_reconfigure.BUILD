@@ -52,7 +52,6 @@ cc_test(
     deps = [
         ':cclib',
         ':dynamic_reconfigure_cpp',
-        ':msgs_cpp',
         '@roscpp_repo//:cclib',
     ],
 )
@@ -64,6 +63,8 @@ cc_test(
     ],
     deps = [
         ':cclib',
+        ':dynamic_reconfigure_cpp',
+        '@boost//:chrono',
         '@gtest//:main',
         '@roscpp_repo//:cclib',
     ],
