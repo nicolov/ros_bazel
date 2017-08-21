@@ -21,7 +21,9 @@ cmake_configure_file(
 cmake_configure_file(
     name='config_h',
     src='src/libros/config.h.in',
-    out='src/libros/config.h',
+    # Bazel automatically adds -iquote to the root of external repos, so we
+    # save the generated file to the root instead of `src/libros`.
+    out='config.h',
     defines=[
         'HAVE_IFADDRS_H',
         'HAVE_TRUNC',
@@ -33,7 +35,7 @@ cc_library(
     srcs=[
         'src/libros/callback_queue.cpp',
         'src/libros/common.cpp',
-        'src/libros/config.h',
+        'config.h',
         'src/libros/connection.cpp',
         'src/libros/connection_manager.cpp',
         'src/libros/file_log.cpp',
@@ -85,12 +87,6 @@ cc_library(
         'include/**/*.hpp'
     ]) + [
         'include/ros/common.h',
-    ],
-    includes=[
-        # TODO: this doesn't belong here, as it's unnecessarily exported to
-        # dependents too. Replace it with a combination of copts and makefile
-        # substitution.
-        'src/libros',
     ],
     strip_include_prefix='include',
     deps=[
