@@ -1,63 +1,68 @@
 package(default_visibility = ["//visibility:public"])
 
-load("@com_github_nicolov_ros_bazel//:tools/ros_interop.bzl",
-     "add_py_extension")
+load(
+    "@com_github_nicolov_ros_bazel//:tools/ros_interop.bzl",
+    "add_py_extension",
+)
 
 cc_library(
-    name = 'cclib',
+    name = "cclib",
     srcs = [
-        'src/player.cpp',
-        'src/recorder.cpp',
-        'src/time_translator.cpp',
+        "src/player.cpp",
+        "src/recorder.cpp",
+        "src/time_translator.cpp",
     ],
-    hdrs = glob(['include/**/*.h', 'include/**/*.hpp']),
-    strip_include_prefix = 'include',
+    hdrs = glob([
+        "include/**/*.h",
+        "include/**/*.hpp",
+    ]),
+    strip_include_prefix = "include",
     deps = [
-        '@rosbag_storage_repo//:cclib',
-        '@roscpp_repo//:cclib',
-        '@topic_tools_repo//:cclib',
+        "@rosbag_storage_repo//:cclib",
+        "@roscpp_repo//:cclib",
+        "@topic_tools_repo//:cclib",
     ],
 )
 
 cc_binary(
-    name = 'record',
+    name = "record",
     srcs = [
-        'src/record.cpp'
+        "src/record.cpp",
     ],
     deps = [
-        ':cclib',
-        '@boost//:program_options',
+        ":cclib",
+        "@boost//:program_options",
     ],
 )
 
 cc_binary(
-    name = 'play',
+    name = "play",
     srcs = [
-        'src/play.cpp'
+        "src/play.cpp",
     ],
     deps = [
-        ':cclib',
-        '@boost//:program_options',
+        ":cclib",
+        "@boost//:program_options",
     ],
 )
 
 py_library(
-    name = 'pylib',
-    srcs = glob(['src/**/*.py']),
-    imports = ['src'],
+    name = "pylib",
+    srcs = glob(["src/**/*.py"]),
+    imports = ["src"],
     deps = [
-        '@rospy_repo//:pylib',
+        "@rospy_repo//:pylib",
     ],
 )
 
-add_py_extension(src = 'scripts/rosbag')
+add_py_extension(src = "scripts/rosbag")
 
 py_binary(
-    name = 'rosbag',
+    name = "rosbag",
     srcs = [
-        'scripts/rosbag.py',
+        "scripts/rosbag.py",
     ],
     deps = [
-        ':pylib',
+        ":pylib",
     ],
 )

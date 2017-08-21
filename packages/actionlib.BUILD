@@ -11,16 +11,19 @@ package(default_visibility = ["//visibility:public"])
 # )
 
 cc_library(
-    name = 'cclib',
+    name = "cclib",
     srcs = [
-        'src/connection_monitor.cpp',
-        'src/goal_id_generator.cpp',
+        "src/connection_monitor.cpp",
+        "src/goal_id_generator.cpp",
     ],
-    hdrs = glob(['include/**/*.h', 'include/**/*.hpp']),
-    strip_include_prefix = 'include',
+    hdrs = glob([
+        "include/**/*.h",
+        "include/**/*.hpp",
+    ]),
+    strip_include_prefix = "include",
     deps = [
-        '@actionlib_msgs_repo//:msgs_cpp',
-        '@roscpp_repo//:cclib',
+        "@actionlib_msgs_repo//:msgs_cpp",
+        "@roscpp_repo//:cclib",
         # '@bond_repo//:msgs_cpp',
         # '@roscpp_repo//:cclib',
         # '@smclib_repo//:cclib',

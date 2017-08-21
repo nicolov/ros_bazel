@@ -4,6 +4,6 @@ sh_binary(
     name = "rosrun",
     srcs = ["scripts/rosrun"],
     data = [
-        '@rospack_repo//:rospack',
+        "@rospack_repo//:rospack",
     ],
 )

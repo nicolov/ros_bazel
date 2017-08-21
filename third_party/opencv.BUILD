@@ -1,14 +1,14 @@
 package(default_visibility = ["//visibility:public"])
 
 cc_library(
-    name = 'opencv',
-    hdrs = glob([
-        'include/opencv2/**/*.h',
-        'include/opencv2/**/*.hpp',
-    ]),
-    strip_include_prefix = 'include',
+    name = "opencv",
     srcs = glob([
-        'lib/libopencv*.so*',
+        "lib/libopencv*.so*",
+    ]),
+    hdrs = glob([
+        "include/opencv2/**/*.h",
+        "include/opencv2/**/*.hpp",
     ]),
     licenses = ["notice"],
+    strip_include_prefix = "include",
 )

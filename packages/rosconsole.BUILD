@@ -1,24 +1,24 @@
 package(default_visibility = ["//visibility:public"])
 
 cc_library(
-    name='cclib',
-    srcs=[
-        'src/rosconsole/rosconsole_backend.cpp',
-        'src/rosconsole/rosconsole.cpp',
-        'src/rosconsole/impl/rosconsole_glog.cpp'
+    name = "cclib",
+    srcs = [
+        "src/rosconsole/impl/rosconsole_glog.cpp",
+        "src/rosconsole/rosconsole.cpp",
+        "src/rosconsole/rosconsole_backend.cpp",
     ],
-    hdrs=glob([
-        'include/**/*.h',
-        'include/**/*.hpp',
+    hdrs = glob([
+        "include/**/*.h",
+        "include/**/*.hpp",
     ]),
-    strip_include_prefix='include',
-    deps=[
-        '@boost//:regex',
-        '@boost//:system',
-        '@boost//:thread',
-        '@cpp_common_repo//:cclib',
-        '@glog',
-        '@rostime_repo//:cclib',
+    strip_include_prefix = "include",
+    deps = [
+        "@boost//:regex",
+        "@boost//:system",
+        "@boost//:thread",
+        "@cpp_common_repo//:cclib",
+        "@glog",
+        "@rostime_repo//:cclib",
     ],
 )
 
@@ -34,11 +34,11 @@ cc_library(
 # )
 
 cc_test(
-    name='assertion_test',
-    srcs=['test/assertion_test.cpp'],
-    deps=[
-        ':cclib',
-        '@gtest//:main',
+    name = "assertion_test",
+    srcs = ["test/assertion_test.cpp"],
+    deps = [
+        ":cclib",
+        "@gtest//:main",
     ],
 )
 

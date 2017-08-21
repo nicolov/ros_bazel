@@ -1,13 +1,16 @@
 package(default_visibility = ["//visibility:public"])
 
 cc_library(
-    name='cclib',
-    srcs=glob(['src/**/*.cpp']),
-    hdrs=glob(['include/**/*.h', 'include/**/*.hpp']),
-    strip_include_prefix='include',
-    deps=[
-        '@console_bridge',
-        '@poco//:foundation',
+    name = "cclib",
+    srcs = glob(["src/**/*.cpp"]),
+    hdrs = glob([
+        "include/**/*.h",
+        "include/**/*.hpp",
+    ]),
+    strip_include_prefix = "include",
+    deps = [
+        "@console_bridge",
+        "@poco//:foundation",
     ],
 )
 
@@ -15,43 +18,44 @@ cc_library(
 # tests only run when the LD_LIBRARY_PATH points to the runfiles directory.
 # https://groups.google.com/forum/#!topic/bazel-discuss/dhsZnRSXnTo
 cc_binary(
-    name = 'libclass_loader_TestPlugins1.so',
+    name = "libclass_loader_TestPlugins1.so",
     srcs = [
-        'test/plugins1.cpp',
-        'test/base.h',
+        "test/base.h",
+        "test/plugins1.cpp",
     ],
     linkshared = 1,
     linkstatic = 0,
     deps = [
-        ':cclib',
+        ":cclib",
     ],
 )
+
 cc_binary(
-    name = 'libclass_loader_TestPlugins2.so',
+    name = "libclass_loader_TestPlugins2.so",
     srcs = [
-        'test/plugins2.cpp',
-        'test/base.h',
+        "test/base.h",
+        "test/plugins2.cpp",
     ],
     linkshared = 1,
     linkstatic = 0,
     deps = [
-        ':cclib',
+        ":cclib",
     ],
 )
 
 cc_test(
-    name = 'utest',
+    name = "utest",
     srcs = [
-        'test/utest.cpp',
-        'test/base.h',
-    ],
-    deps = [
-        ':cclib',
-        '@boost//:system',
-        '@gtest//:main',
+        "test/base.h",
+        "test/utest.cpp",
     ],
     data = [
-        ':libclass_loader_TestPlugins1.so',
-        ':libclass_loader_TestPlugins2.so',
+        ":libclass_loader_TestPlugins1.so",
+        ":libclass_loader_TestPlugins2.so",
+    ],
+    deps = [
+        ":cclib",
+        "@boost//:system",
+        "@gtest//:main",
     ],
 )
